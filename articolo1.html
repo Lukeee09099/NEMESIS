@@ -3,149 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Metodo delle 3 Verità - NEMESIS</title>
+    <title>Graham Hancock: Il Ribelle che Sfida l'Archeologia - NEMESIS</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Stili aggiuntivi per l'articolo */
-        .article-container {
+        .article-hero {
+            height: 60vh;
+            background: linear-gradient(var(--overlay-scuro), var(--overlay-scuro)), 
+                        url('https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 20px 60px;
+            position: relative;
+        }
+        .article-hero-content {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .article-hero h1 {
+            font-size: 4rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            color: var(--bianco-stellare);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+        .article-hero .meta {
+            color: var(--grigio-lunare);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .article-container {
+            max-width: 800px;
+            margin: 60px auto;
             padding: 0 20px;
         }
-        .article-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .article-header h1 {
-            font-size: 3rem;
-            color: var(--rosso-sangue);
-            text-transform: uppercase;
-        }
-        .article-meta {
-            color: var(--oro-antico);
-            margin-top: 10px;
-        }
-        .hook {
-            font-size: 1.4rem;
-            font-style: italic;
-            border-left: 5px solid var(--oro-antico);
-            padding-left: 25px;
-            margin: 40px 0;
-            color: var(--grigio-chiaro);
-        }
-        .truth-card {
-            background: rgba(0,0,0,0.3);
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 10px;
-            border-left: 5px solid;
-        }
-        .truth-card h2 {
+        .article-container h2 {
             font-size: 2rem;
-            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--bianco-stellare);
+            margin: 40px 0 20px;
         }
-        .truth-card.superficial { border-color: #FF0000; }
-        .truth-card.structural { border-color: #FFD700; }
-        .truth-card.nuclear { border-color: #00FF00; }
-        .quote-box {
-            background: var(--blu-abisso);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
+        .article-container p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .article-container blockquote {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255,255,255,0.02);
+            border-left: 4px solid var(--oro-antico);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
             font-style: italic;
-            border: 1px solid var(--oro-antico);
+            color: var(--grigio-lunare);
         }
-        .cta-article {
-            text-align: center;
-            margin: 50px 0;
+        .image-full {
+            margin: 40px 0;
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+        }
+        .highlight-box {
+            background: rgba(30, 58, 138, 0.2);
+            border: 1px solid var(--blu-elettrico);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        .netflix-link {
+            display: inline-block;
+            margin-top: 20px;
+            background: #E50914;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .netflix-link:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <header style="height: auto; padding: 60px 20px;">
-        <nav>
+    <nav>
+        <div class="logo-small">⚡NEMESIS</div>
+        <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="#">Articoli</a>
+            <a href="index.html#articoli">Esplora</a>
             <a href="manifesto.html">Manifesto</a>
-            <a href="#">Contatti</a>
-        </nav>
-        <div class="logo pulse" style="font-size: 3rem;">⚡ NEMESIS</div>
-    </header>
+            <a href="contatti.html">Contatti</a>
+        </div>
+    </nav>
 
-    <main class="article-container">
-        <div class="article-header">
-            <h1>Il Metodo delle 3 Verità</h1>
-            <div class="article-meta">Pubblicato il 28 febbraio 2025 | Tempo di lettura: 7 minuti</div>
+    <div class="article-hero">
+        <div class="article-hero-content">
+            <div class="meta">ESPLORAZIONE COGNITIVA • 28 FEBBRAIO 2025</div>
+            <h1>Graham Hancock: Il Ribelle che Sfida l'Archeologia</h1>
+        </div>
+    </div>
+
+    <div class="article-container">
+        <p class="hook" style="font-size: 1.4rem; font-style: italic; color: var(--oro-antico); margin-bottom: 30px;">
+            "La storia che ci hanno insegnato è solo l'ombra di ciò che è realmente accaduto."
+        </p>
+
+        <p>Graham Hancock non è un archeologo. Non ha cattedre universitarie né pubblicazioni su riviste peer-reviewed. E forse è proprio per questo che vede ciò che gli accademici, accecati dai loro paradigmi, non vogliono vedere.</p>
+
+        <p>Da oltre trent'anni, Hancock viaggia per il mondo con una missione: trovare le prove dell'esistenza di una civiltà perduta, avanzata, globale, risalente all'ultima era glaciale. Una civiltà che sarebbe stata spazzata via da un cataclisma circa 12.000 anni fa, lasciando solo frammenti: piramidi sommerse, templi allineati alle stelle, miti che parlano di "diluvi" e "dei venuti dal cielo".</p>
+
+        <img src="https://images.unsplash.com/photo-1568322445389-f64a8a2c1f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Piramidi" class="image-full">
+
+        <h2>Il Metodo Hancock: Perché gli Accademici lo Odiano</h2>
+
+        <p>La critica mainstream lo accusa di essere un "pseudo-archeologo", di selezionare solo le prove che confermano le sue teorie, di ignorare il consenso scientifico. Ma Hancock risponde con una domanda scomoda: chi ha stabilito il consenso? E chi decide cosa è "scientifico"?</p>
+
+        <div class="highlight-box">
+            <p><strong>Il punto non è se Hancock abbia ragione. Il punto è: perché così tante scoperte vengono ignorate solo perché non si incastrano nel paradigma dominante?</strong></p>
         </div>
 
-        <div class="hook">
-            "Tutto ciò che leggi ha almeno tre livelli di verità. Il problema? La maggior parte si ferma al primo."
+        <p>Prendete Göbekli Tepe in Turchia: un complesso templare di 11.500 anni fa, costruito da cacciatori-raccoglitori. Impossibile, secondo l'archeologia tradizionale. Eppure è lì. Hancock lo cita come prova che una civiltà avanzata esisteva molto prima di quanto crediamo.</p>
+
+        <h2>Come Tesla: Il Genio che non Seguiva le Regole</h2>
+
+        <p>Quando Nikola Tesla parlava di energia wireless, corrente alternata, comunicazioni a distanza, i suoi contemporanei lo deridevano. "Impossibile", dicevano. Oggi senza Tesla non esisterebbe il mondo moderno.</p>
+
+        <blockquote>
+            "Le più grandi scoperte non nascono mai all'interno del modello logico dominante. Nascono quando qualcuno ha il coraggio di guardare fuori."
+        </blockquote>
+
+        <p>Hancock non ha le prove definitive. Ma ha accumulato un'impressionante mole di indizi: mappe antiche che mostrano coste sommerse, miti convergenti da continenti diversi, allineamenti astronomici che richiedono conoscenze avanzate. Non è una prova, ma è un invito a porre domande.</p>
+
+        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Spazio profondo" class="image-full">
+
+        <h2>Il Documentario che Sta Cambiando la Narrativa</h2>
+
+        <p>Netflix ha prodotto una serie in due stagioni: <strong>"Ancient Apocalypse"</strong>. Hancock viaggia, mostra, interroga. La serie è stata un fenomeno globale, vista da milioni di persone. E ha scatenato un putiferio: l'archeologia organizzata ha chiesto a Netflix di ritirarla, etichettandola come "disinformazione".</p>
+
+        <p>Ma forse la vera disinformazione è nascondere al pubblico che il nostro passato è molto più misterioso di quanto ci raccontano.</p>
+
+        <a href="https://www.netflix.com/it/title/81211003" target="_blank" class="netflix-link">GUARDA SU NETFLIX →</a>
+
+        <div style="margin: 60px 0; text-align: center;">
+            <h3>🎯 DOMANDA PROIBITA</h3>
+            <p style="font-size: 1.3rem; font-style: italic;">Quante altre verità vengono nascoste perché non si adattano al modello?</p>
+            <button class="cta-button" style="margin-top: 20px;" onclick="alert('Condividi questo articolo. La verità ha bisogno di testimoni.')">CONDIVIDI LA RIVELAZIONE</button>
         </div>
 
-        <p>Ogni giorno siamo bombardati da notizie, dichiarazioni, narrazioni. Ma cosa si cela dietro la superficie? Il metodo NEMESIS ti insegna a decodificare la realtà in tre strati.</p>
-
-        <div class="truth-card superficial">
-            <h2>🎭 Verità superficiale</h2>
-            <p><strong>Ciò che viene detto apertamente.</strong> La narrazione ufficiale, i titoli dei giornali, le dichiarazioni pubbliche. È il livello più accessibile, ma anche il più ingannevole.</p>
-            <p><em>Esempio:</em> "L'economia cresce del 2%."</p>
-        </div>
-
-        <div class="truth-card structural">
-            <h2>🏛️ Verità strutturale</h2>
-            <p><strong>Perché viene detto così.</strong> Gli interessi in gioco, i meccanismi di potere, le agende nascoste. Chi guadagna da questa narrazione?</p>
-            <p><em>Esempio:</em> "La crescita è trainata solo da alcuni settori, mentre i salari ristagnano."</p>
-        </div>
-
-        <div class="truth-card nuclear">
-            <h2>⚡ Verità nucleare</h2>
-            <p><strong>Ciò che non verrà mai detto apertamente.</strong> Le conseguenze reali, i cambiamenti sistemici, la direzione effettiva. Spesso scomoda, sempre rivelatrice.</p>
-            <p><em>Esempio:</em> "La crescita misurata ignora il debito ecologico e sociale, preparando crisi future."</p>
-        </div>
-
-        <div class="quote-box">
-            "La verità è come un iceberg: la parte visibile è solo una frazione di ciò che realmente esiste." – NEMESIS
-        </div>
-
-        <h2>Applicare il metodo oggi</h2>
-        <p>Prendiamo una notizia recente: [inserisci esempio]. Analizziamola insieme...</p>
-        <p>(Qui puoi espandere con un caso concreto. Per ora lasciamo spazio.)</p>
-
-        <div class="cta-article">
-            <h3>🎯 Domanda proibita</h3>
-            <p><em>Quale verità nucleare stai evitando di vedere nella tua vita?</em></p>
-            <button class="cta-button" onclick="alert('Condividi questo articolo con chi deve ancora svegliarsi.')">CONDIVIDI E PROSEGUI</button>
-        </div>
-    </main>
+        <p style="text-align: center; color: var(--grigio-lunare); margin-top: 40px;">🔍 Continua a esplorare: <a href="#" style="color: var(--arancione-signal);">Cronosanguis: i pattern della storia</a></p>
+    </div>
 
     <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <h4>NEMESIS</h4>
                 <a href="manifesto.html">Manifesto</a>
-                <a href="#">Chi siamo</a>
-                <a href="#">Contatti</a>
+                <a href="manifesto.html">Chi siamo</a>
+                <a href="contatti.html">Contatti</a>
             </div>
             <div class="footer-col">
                 <h4>Esplora</h4>
-                <a href="#">Articoli</a>
+                <a href="index.html#articoli">Articoli</a>
                 <a href="#">Dossier</a>
                 <a href="#">Mappa dei pattern</a>
             </div>
             <div class="footer-col">
-                <h4>Social</h4>
-                <a href="#">Telegram</a>
-                <a href="#">X (Twitter)</a>
-                <a href="#">Instagram</a>
+                <h4>Contatti</h4>
+                <a href="mailto:intotheunknown.nemesis@gmail.com">Email</a>
+                <a href="#">Telegram (presto)</a>
             </div>
             <div class="footer-col">
-                <h4>Legale</h4>
-                <a href="#">Privacy</a>
-                <a href="#">Termini</a>
+                <h4>Crediti</h4>
+                <a href="#">Immagini: NASA, ESA, Unsplash</a>
+                <a href="#">Ispirazioni: Hancock, Tesla</a>
             </div>
         </div>
         <div class="copyright">
             <p>© 2025 NEMESIS - Cogito Ergo Revolvo. Tutti i diritti riservati.</p>
-            <p>Email: vivalestrade+nemesis@gmail.com</p>
+            <p>intotheunknown.nemesis@gmail.com</p>
+        </div>
+        <div class="credits">
+            <p>Immagini: NASA, ESA, Unsplash. Nel dubbio, citiamo tutti.</p>
         </div>
     </footer>
 </body>
