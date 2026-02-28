@@ -1,6 +1,5 @@
 /* NEMESIS - STILE FINALE VERSIONE 3.0 */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Racing+Sans+One&display=swap');
-
 :root {
   --notte-profonda: #0B0E1A;
   --blu-oltremare: #13294B;
@@ -592,3 +591,4 @@ footer {
     text-align: center;
   }
 }
+
