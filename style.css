@@ -1,163 +1,282 @@
-/* NEMESIS - Stili principali */
+/* NEMESIS - STILE RIVOLUZIONARIO */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:wght@700&display=swap');
+
 :root {
-    --nero-assoluto: #000000;
-    --rosso-rivoluzione: #FF0000;
-    --oro-sapienza: #FFD700;
-    --verde-matrice: #00FF00;
-    --grigio-testo: #F0F0F0;
+  --blu-abisso: #0A0F2B;
+  --rosso-sangue: #8B0000;
+  --oro-antico: #B8860B;
+  --grigio-chiaro: #D3D3D3;
+  --nero-profondo: #000000;
+  --bianco-sporco: #F5F5F5;
+  --overlay: rgba(10, 15, 43, 0.85);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--nero-assoluto);
-    color: var(--grigio-testo);
-    font-family: 'Courier New', monospace;
-    line-height: 1.6;
-    padding: 20px;
+  background-color: var(--nero-profondo);
+  color: var(--bianco-sporco);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
+/* Header con effetto parallax leggero */
 header {
-    text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid var(--rosso-rivoluzione);
-    margin-bottom: 30px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(var(--overlay), var(--overlay)), 
+              url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+  background-attachment: fixed;
+  border-bottom: 3px solid var(--rosso-sangue);
 }
 
 .logo {
-    font-size: 3rem;
-    font-weight: bold;
-    color: var(--rosso-rivoluzione);
-    text-shadow: 0 0 10px var(--rosso-rivoluzione);
-}
-
-.pulse {
-    animation: heartbeat 4s infinite;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--rosso-sangue);
+  text-shadow: 0 0 20px var(--rosso-sangue), 0 0 40px rgba(139, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  animation: heartbeat 4s infinite;
 }
 
 @keyframes heartbeat {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; text-shadow: 0 0 20px var(--rosso-rivoluzione); }
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 1; text-shadow: 0 0 30px var(--rosso-sangue); }
 }
 
 .slogan {
-    color: var(--oro-sapienza);
-    font-size: 1.2rem;
-    margin: 10px 0;
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--oro-antico);
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
 }
 
-nav {
-    margin: 20px 0;
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
-nav a {
-    color: var(--grigio-testo);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--rosso-rivoluzione);
-}
-
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    border: 1px solid var(--oro-sapienza);
-    margin-bottom: 40px;
-    background: linear-gradient(145deg, #111, #000);
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    color: var(--rosso-rivoluzione);
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+.hero-subtitle {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  color: var(--grigio-chiaro);
 }
 
 .cta-button {
-    display: inline-block;
-    background: var(--rosso-rivoluzione);
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: none;
-    cursor: pointer;
+  display: inline-block;
+  background: var(--rosso-sangue);
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--rosso-rivoluzione);
+  background: transparent;
+  border-color: var(--rosso-sangue);
+  color: var(--rosso-sangue);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(139, 0, 0, 0.3);
 }
 
-.articles {
-    margin-bottom: 40px;
+/* Navigazione */
+nav {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  gap: 30px;
 }
 
-.articles h2 {
-    color: var(--oro-sapienza);
-    border-left: 5px solid var(--rosso-rivoluzione);
-    padding-left: 15px;
-    margin-bottom: 30px;
+nav a {
+  color: var(--bianco-sporco);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
 }
 
-article {
-    background: #111;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-left: 3px solid var(--verde-matrice);
+nav a:hover {
+  color: var(--oro-antico);
 }
 
-article h3 {
-    color: var(--verde-matrice);
-    margin-bottom: 10px;
+/* Sezione articoli */
+.articles-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-article a {
-    color: var(--oro-sapienza);
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--oro-antico);
+  border-left: 5px solid var(--rosso-sangue);
+  padding-left: 20px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
 }
 
-.cognitive-id {
-    text-align: center;
-    padding: 40px;
-    border: 2px dashed var(--oro-sapienza);
-    margin-bottom: 40px;
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
-.id-box {
-    background: #111;
-    padding: 30px;
-    max-width: 500px;
-    margin: 20px auto;
+.article-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(5px);
 }
 
-.id-box p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.article-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  border-color: var(--oro-antico);
 }
 
+.article-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.article-card h3 {
+  font-size: 1.8rem;
+  color: var(--rosso-sangue);
+  margin-bottom: 10px;
+}
+
+.article-card p {
+  color: var(--grigio-chiaro);
+  margin-bottom: 20px;
+}
+
+.article-link {
+  color: var(--oro-antico);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.3s;
+}
+
+.article-link:hover {
+  gap: 10px;
+}
+
+/* Cognitive ID Box */
+.cognitive-section {
+  background: var(--blu-abisso);
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 2px solid var(--rosso-sangue);
+  border-bottom: 2px solid var(--rosso-sangue);
+}
+
+.cognitive-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--oro-antico);
+}
+
+.cognitive-box h2 {
+  font-size: 2.2rem;
+  color: var(--oro-antico);
+  margin-bottom: 20px;
+}
+
+.cognitive-box p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cognitive-id-display {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  font-family: monospace;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: var(--verde-matrice);
+  border: 1px solid var(--verde-matrice);
+  margin-bottom: 20px;
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid var(--grigio-testo);
-    font-size: 0.9rem;
+  background: var(--blu-abisso);
+  padding: 50px 20px 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.footer-col h4 {
+  color: var(--oro-antico);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.footer-col a {
+  color: var(--grigio-chiaro);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--rosso-sangue);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--grigio-chiaro);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo { font-size: 3rem; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  nav { position: static; justify-content: center; margin-top: 20px; }
+  header { height: auto; padding: 100px 20px; }
 }
