@@ -1,0 +1,163 @@
+/* NEMESIS - Stili principali */
+:root {
+    --nero-assoluto: #000000;
+    --rosso-rivoluzione: #FF0000;
+    --oro-sapienza: #FFD700;
+    --verde-matrice: #00FF00;
+    --grigio-testo: #F0F0F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--nero-assoluto);
+    color: var(--grigio-testo);
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid var(--rosso-rivoluzione);
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--rosso-rivoluzione);
+    text-shadow: 0 0 10px var(--rosso-rivoluzione);
+}
+
+.pulse {
+    animation: heartbeat 4s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 20px var(--rosso-rivoluzione); }
+}
+
+.slogan {
+    color: var(--oro-sapienza);
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: var(--grigio-testo);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--rosso-rivoluzione);
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    border: 1px solid var(--oro-sapienza);
+    margin-bottom: 40px;
+    background: linear-gradient(145deg, #111, #000);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--rosso-rivoluzione);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--rosso-rivoluzione);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--rosso-rivoluzione);
+}
+
+.articles {
+    margin-bottom: 40px;
+}
+
+.articles h2 {
+    color: var(--oro-sapienza);
+    border-left: 5px solid var(--rosso-rivoluzione);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+article {
+    background: #111;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--verde-matrice);
+}
+
+article h3 {
+    color: var(--verde-matrice);
+    margin-bottom: 10px;
+}
+
+article a {
+    color: var(--oro-sapienza);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.cognitive-id {
+    text-align: center;
+    padding: 40px;
+    border: 2px dashed var(--oro-sapienza);
+    margin-bottom: 40px;
+}
+
+.id-box {
+    background: #111;
+    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.id-box p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--grigio-testo);
+    font-size: 0.9rem;
+}
