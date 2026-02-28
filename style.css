@@ -1,4 +1,4 @@
-/* NEMESIS - ARCHITETTURA COGNITIVA V2.0 */
+/* NEMESIS - ARCHITETTURA COGNITIVA V2.1 (LUMINOSITÀ OTTIMIZZATA) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Racing+Sans+One&display=swap');
 
 :root {
@@ -10,7 +10,7 @@
   --grigio-neutro: #8A9AA9;
   --arancione-racing: #E10600;
   --oro-antico: #C5A572;
-  --overlay-dark: rgba(11, 14, 26, 0.95);
+  --overlay-dark: rgba(11, 14, 26, 0.7); /* Ridotto da 0.95 a 0.7 */
   --overlay-light: rgba(255, 255, 255, 0.02);
   --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -87,6 +87,15 @@ nav.scrolled {
   color: var(--bianco-assoluto);
   text-decoration: none;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Se il logo è scuro, lo rende bianco */
 }
 
 .logo span {
@@ -130,7 +139,7 @@ nav.scrolled {
   width: 100%;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (CON IMMAGINE ESA LUMINOSA) ===== */
 .hero {
   position: relative;
   height: 100vh;
@@ -139,7 +148,7 @@ nav.scrolled {
   justify-content: center;
   text-align: center;
   background: linear-gradient(var(--overlay-dark), var(--overlay-dark)),
-              url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+              url('https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/12/earth_observation/23884917-1-eng-GB/Earth_observation.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -315,10 +324,12 @@ nav.scrolled {
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s;
+  filter: brightness(1.1); /* Aumenta luminosità */
 }
 
 .article-card:hover .article-card__image {
   transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
 .article-card__overlay {
