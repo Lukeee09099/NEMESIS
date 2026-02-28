@@ -8,54 +8,99 @@
 </head>
 <body>
     <header>
-        <div class="logo pulse">⚡ NEMESIS</div>
-        <p class="slogan">Cogito Ergo Revolvo</p>
         <nav>
             <a href="index.html">Home</a>
             <a href="#">Articoli</a>
-            <a href="#">Chi siamo</a>
+            <a href="manifesto.html">Manifesto</a>
             <a href="#">Contatti</a>
         </nav>
+        <div class="logo pulse">⚡ NEMESIS</div>
+        <div class="slogan">Cogito Ergo Revolvo</div>
+        <h1 class="hero-title">OGGI È SEMPRE IERI</h1>
+        <p class="hero-subtitle">47 pattern storici si ripetono in questo momento. Impariamo a vederli.</p>
+        <a href="articolo1.html" class="cta-button">ACCEDI ALLA MATRICE →</a>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>OGGI È SEMPRE IERI</h1>
-            <p>47 pattern storici si ripetono in questo momento. Scopri quali.</p>
-            <a href="articolo1.html" class="cta-button">ACCEDI ALLA MATRICE →</a>
+        <section class="articles-section">
+            <h2 class="section-title">IL LABIRINTO DELLE VERITÀ</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-icon">📜</div>
+                    <h3>Il Metodo delle 3 Verità</h3>
+                    <p>Ogni evento ha tre livelli: superficiale, strutturale, nucleare. Impari a decodificare.</p>
+                    <a href="articolo1.html" class="article-link">Leggi l'articolo →</a>
+                </article>
+                <article class="article-card">
+                    <div class="article-icon">⚡</div>
+                    <h3>Cronosanguis</h3>
+                    <p>La storia non si ripete: sanguina negli stessi punti. Scopri i pattern che tornano ogni 50 anni.</p>
+                    <a href="#" class="article-link">Leggi l'articolo →</a>
+                </article>
+                <article class="article-card">
+                    <div class="article-icon">🧠</div>
+                    <h3>Il Codice della Ribellione Cognitiva</h3>
+                    <p>Come hackerare i paradigmi dominanti e vedere ciò che gli altri ignorano.</p>
+                    <a href="#" class="article-link">Leggi l'articolo →</a>
+                </article>
+            </div>
         </section>
 
-        <section class="articles">
-            <h2>IL LABIRINTO DELLE VERITÀ</h2>
-            <article>
-                <h3>📜 Il Metodo delle 3 Verità</h3>
-                <p>Ogni evento ha tre livelli di verità. Quanti ne vedi?</p>
-                <a href="articolo1.html">Leggi →</a>
-            </article>
-            <article>
-                <h3>⚡ Cronosanguis: il sangue del tempo</h3>
-                <p>La storia non si ripete: sanguina negli stessi punti.</p>
-                <a href="#">Leggi →</a>
-            </article>
-            <article>
-                <h3>🧠 Il Codice della Ribellione Cognitiva</h3>
-                <p>Come hackerare i paradigmi dominanti.</p>
-                <a href="#">Leggi →</a>
-            </article>
-        </section>
-
-        <section class="cognitive-id">
-            <h2>OTTENI IL TUO COGNITIVE ID</h2>
-            <div class="id-box">
-                <p>Il tuo codice univoco: <strong>NEMESIS-XXXX-XXXX</strong></p>
-                <button class="cta-button" onclick="alert('Funzione in arrivo. Presto potrai generare il tuo ID.')">GENERA ID</button>
+        <section class="cognitive-section">
+            <div class="cognitive-box">
+                <h2>IL TUO COGNITIVE ID</h2>
+                <p>Ogni esploratore della verità ha un codice unico. Richiedi il tuo per accedere alla mappa dei pattern.</p>
+                <div class="cognitive-id-display" id="cognitiveId">NEMESIS-XXXX-XXXX</div>
+                <button class="cta-button" onclick="generateId()">GENERA ID</button>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 NEMESIS - Cogito Ergo Revolvo</p>
-        <p>Email: vivalestrade+nemesis@gmail.com</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>NEMESIS</h4>
+                <a href="manifesto.html">Manifesto</a>
+                <a href="#">Chi siamo</a>
+                <a href="#">Contatti</a>
+            </div>
+            <div class="footer-col">
+                <h4>Esplora</h4>
+                <a href="#">Articoli</a>
+                <a href="#">Dossier</a>
+                <a href="#">Mappa dei pattern</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <a href="#">Telegram</a>
+                <a href="#">X (Twitter)</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legale</h4>
+                <a href="#">Privacy</a>
+                <a href="#">Termini</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 NEMESIS - Cogito Ergo Revolvo. Tutti i diritti riservati.</p>
+            <p>Email: vivalestrade+nemesis@gmail.com</p>
+        </div>
     </footer>
+
+    <script>
+        function generateId() {
+            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let id = 'NEMESIS-';
+            for (let i = 0; i < 4; i++) {
+                id += chars[Math.floor(Math.random() * chars.length)];
+            }
+            id += '-';
+            for (let i = 0; i < 4; i++) {
+                id += chars[Math.floor(Math.random() * chars.length)];
+            }
+            document.getElementById('cognitiveId').innerText = id;
+        }
+    </script>
 </body>
 </html>
