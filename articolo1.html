@@ -5,55 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Il Metodo delle 3 Verità - NEMESIS</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stili aggiuntivi per l'articolo */
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .article-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .article-header h1 {
+            font-size: 3rem;
+            color: var(--rosso-sangue);
+            text-transform: uppercase;
+        }
+        .article-meta {
+            color: var(--oro-antico);
+            margin-top: 10px;
+        }
+        .hook {
+            font-size: 1.4rem;
+            font-style: italic;
+            border-left: 5px solid var(--oro-antico);
+            padding-left: 25px;
+            margin: 40px 0;
+            color: var(--grigio-chiaro);
+        }
+        .truth-card {
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 10px;
+            border-left: 5px solid;
+        }
+        .truth-card h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .truth-card.superficial { border-color: #FF0000; }
+        .truth-card.structural { border-color: #FFD700; }
+        .truth-card.nuclear { border-color: #00FF00; }
+        .quote-box {
+            background: var(--blu-abisso);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-style: italic;
+            border: 1px solid var(--oro-antico);
+        }
+        .cta-article {
+            text-align: center;
+            margin: 50px 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo pulse">⚡ NEMESIS</div>
-        <p class="slogan">Cogito Ergo Revolvo</p>
+    <header style="height: auto; padding: 60px 20px;">
         <nav>
             <a href="index.html">Home</a>
             <a href="#">Articoli</a>
-            <a href="#">Chi siamo</a>
+            <a href="manifesto.html">Manifesto</a>
             <a href="#">Contatti</a>
         </nav>
+        <div class="logo pulse" style="font-size: 3rem;">⚡ NEMESIS</div>
     </header>
 
-    <main>
-        <article class="full-article">
-            <h1>IL METODO DELLE 3 VERITÀ</h1>
-            <div class="hook">
-                <p><em>"Tutto ciò che leggi ha almeno tre livelli di verità. Il problema? La maggior parte si ferma al primo."</em></p>
-            </div>
+    <main class="article-container">
+        <div class="article-header">
+            <h1>Il Metodo delle 3 Verità</h1>
+            <div class="article-meta">Pubblicato il 28 febbraio 2025 | Tempo di lettura: 7 minuti</div>
+        </div>
 
-            <div class="truth-level" style="border-left: 5px solid #FF0000; padding-left: 20px; margin: 30px 0;">
-                <h2>🎭 VERITÀ SUPERFICIALE</h2>
-                <p><strong>Ciò che viene detto apertamente.</strong> La narrazione ufficiale, i titoli dei giornali, le dichiarazioni pubbliche.</p>
-                <p><strong>Esempio:</strong> "L'economia cresce del 2%"</p>
-            </div>
+        <div class="hook">
+            "Tutto ciò che leggi ha almeno tre livelli di verità. Il problema? La maggior parte si ferma al primo."
+        </div>
 
-            <div class="truth-level" style="border-left: 5px solid #FFD700; padding-left: 20px; margin: 30px 0;">
-                <h2>🏛️ VERITÀ STRUTTURALE</h2>
-                <p><strong>Perché viene detto così.</strong> Gli interessi in gioco, i meccanismi di potere, le agende nascoste.</p>
-                <p><strong>Esempio:</strong> "Cresce solo per alcuni settori, non per i salari"</p>
-            </div>
+        <p>Ogni giorno siamo bombardati da notizie, dichiarazioni, narrazioni. Ma cosa si cela dietro la superficie? Il metodo NEMESIS ti insegna a decodificare la realtà in tre strati.</p>
 
-            <div class="truth-level" style="border-left: 5px solid #00FF00; padding-left: 20px; margin: 30px 0;">
-                <h2>⚡ VERITÀ NUCLEARE</h2>
-                <p><strong>Ciò che non verrà mai detto apertamente.</strong> Le conseguenze reali, i cambiamenti sistemici, la direzione effettiva.</p>
-                <p><strong>Esempio:</strong> "La crescita misurata ignora il debito ecologico e sociale"</p>
-            </div>
+        <div class="truth-card superficial">
+            <h2>🎭 Verità superficiale</h2>
+            <p><strong>Ciò che viene detto apertamente.</strong> La narrazione ufficiale, i titoli dei giornali, le dichiarazioni pubbliche. È il livello più accessibile, ma anche il più ingannevole.</p>
+            <p><em>Esempio:</em> "L'economia cresce del 2%."</p>
+        </div>
 
-            <div class="cta-box" style="text-align: center; margin: 40px 0;">
-                <h3>🎯 DOMANDA PROIBITA</h3>
-                <p><em>"Quale verità nucleare stai evitando di vedere nella tua vita?"</em></p>
-                <button class="cta-button" onclick="alert('Condividi con chi deve ancora svegliarsi.')">CONDIVIDI E PROSEGUI</button>
-            </div>
-        </article>
+        <div class="truth-card structural">
+            <h2>🏛️ Verità strutturale</h2>
+            <p><strong>Perché viene detto così.</strong> Gli interessi in gioco, i meccanismi di potere, le agende nascoste. Chi guadagna da questa narrazione?</p>
+            <p><em>Esempio:</em> "La crescita è trainata solo da alcuni settori, mentre i salari ristagnano."</p>
+        </div>
+
+        <div class="truth-card nuclear">
+            <h2>⚡ Verità nucleare</h2>
+            <p><strong>Ciò che non verrà mai detto apertamente.</strong> Le conseguenze reali, i cambiamenti sistemici, la direzione effettiva. Spesso scomoda, sempre rivelatrice.</p>
+            <p><em>Esempio:</em> "La crescita misurata ignora il debito ecologico e sociale, preparando crisi future."</p>
+        </div>
+
+        <div class="quote-box">
+            "La verità è come un iceberg: la parte visibile è solo una frazione di ciò che realmente esiste." – NEMESIS
+        </div>
+
+        <h2>Applicare il metodo oggi</h2>
+        <p>Prendiamo una notizia recente: [inserisci esempio]. Analizziamola insieme...</p>
+        <p>(Qui puoi espandere con un caso concreto. Per ora lasciamo spazio.)</p>
+
+        <div class="cta-article">
+            <h3>🎯 Domanda proibita</h3>
+            <p><em>Quale verità nucleare stai evitando di vedere nella tua vita?</em></p>
+            <button class="cta-button" onclick="alert('Condividi questo articolo con chi deve ancora svegliarsi.')">CONDIVIDI E PROSEGUI</button>
+        </div>
     </main>
 
     <footer>
-        <p>© 2025 NEMESIS - Cogito Ergo Revolvo</p>
-        <p>Email: vivalestrade+nemesis@gmail.com</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>NEMESIS</h4>
+                <a href="manifesto.html">Manifesto</a>
+                <a href="#">Chi siamo</a>
+                <a href="#">Contatti</a>
+            </div>
+            <div class="footer-col">
+                <h4>Esplora</h4>
+                <a href="#">Articoli</a>
+                <a href="#">Dossier</a>
+                <a href="#">Mappa dei pattern</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <a href="#">Telegram</a>
+                <a href="#">X (Twitter)</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legale</h4>
+                <a href="#">Privacy</a>
+                <a href="#">Termini</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 NEMESIS - Cogito Ergo Revolvo. Tutti i diritti riservati.</p>
+            <p>Email: vivalestrade+nemesis@gmail.com</p>
+        </div>
     </footer>
 </body>
 </html>
