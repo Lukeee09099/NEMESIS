@@ -4,44 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graham Hancock - NEMESIS</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        .article-page {
-            background: var(--bianco-panna);
-            padding: 4rem 0;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --giallo-sole: #FFD166;
+            --arancio-vivace: #F07C3E;
+            --verde-prato: #06D6A0;
+            --blu-cielo: #118AB2;
+            --blu-profondo: #073B4C;
+            --bianco-panna: #FDF9F3;
+            --grigio-chiaro: #F0F3F5;
+            --grigio-medio: #D9E2E6;
+            --grigio-scuro: #4A5568;
+            --testo-scuro: #1E2F4D;
+            --transition: all 0.3s ease;
         }
-        .article-container {
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bianco-panna);
+            color: var(--testo-scuro);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
-            border: 1px solid var(--grigio-medio);
+            padding: 2rem;
         }
+
+        header {
+            background: linear-gradient(135deg, var(--blu-profondo), var(--blu-cielo));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--giallo-sole);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--arancio-vivace);
+        }
+
         .article-header {
             margin-bottom: 2rem;
         }
+
         .article-category {
             color: var(--arancio-vivace);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
             margin-bottom: 0.5rem;
         }
+
         .article-title {
             font-size: 2.8rem;
             color: var(--blu-profondo);
             margin-bottom: 1rem;
-            line-height: 1.2;
         }
+
         .article-meta {
-            display: flex;
-            gap: 2rem;
             color: var(--grigio-scuro);
             margin-bottom: 2rem;
-            font-size: 0.9rem;
         }
+
         .article-image {
             width: 100%;
             height: 400px;
@@ -49,15 +88,16 @@
             border-radius: 20px;
             margin-bottom: 2rem;
         }
-        .article-content p {
-            margin-bottom: 1.5rem;
-            color: var(--testo-scuro);
-            line-height: 1.8;
-        }
+
         .article-content h2 {
             margin: 2rem 0 1rem;
             color: var(--blu-profondo);
         }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
         .pull-quote {
             margin: 2rem 0;
             padding: 1.5rem 2rem;
@@ -67,142 +107,81 @@
             font-size: 1.2rem;
             color: var(--blu-profondo);
         }
+
         .btn-back {
             display: inline-block;
-            margin-top: 2rem;
+            margin: 2rem 0;
             padding: 0.8rem 2rem;
             background: var(--blu-cielo);
             color: white;
             border-radius: 50px;
             font-weight: 600;
+            text-decoration: none;
         }
+
         .btn-back:hover {
             background: var(--blu-profondo);
         }
-        .donation-prompt {
-            background: var(--giallo-sole);
-            padding: 2rem;
-            border-radius: 20px;
+
+        footer {
+            background: var(--blu-profondo);
+            color: white;
             text-align: center;
+            padding: 2rem;
             margin-top: 3rem;
         }
-        .donation-prompt p {
-            margin-bottom: 1rem;
-            color: var(--blu-profondo);
+
+        .deepseek-credit a {
+            color: var(--giallo-sole);
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">NEMESIS<span>⚡</span></a>
-            <nav class="nav-links">
-                <a href="index.html#articolo-settimana">La ricerca</a>
-                <a href="index.html#ultime-ricerche">Articoli</a>
-                <a href="index.html#support" onclick="openModal()">Sostienici</a>
-                <a href="index.html#contatti">Contatti</a>
-            </nav>
-        </div>
+        <a href="index.html" class="logo">NEMESIS<span>⚡</span></a>
     </header>
 
-    <main class="article-page">
-        <div class="container">
-            <div class="article-container">
-                <div class="article-header">
-                    <div class="article-category">Archeologia Proibita</div>
-                    <h1 class="article-title">Graham Hancock: Il ribelle che sfida l'archeologia</h1>
-                    <div class="article-meta">
-                        <span>Pubblicato: 1 Marzo 2025</span>
-                        <span>Tempo di lettura: 10 minuti</span>
-                    </div>
-                </div>
-
-                <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Graham Hancock" class="article-image">
-
-                <div class="article-content">
-                    <p class="lead" style="font-size:1.3rem; font-weight:300; color:var(--grigio-scuro);">"La storia che ci hanno insegnato è solo l'ombra di ciò che è realmente accaduto."</p>
-
-                    <p>Graham Hancock non ha mai avuto una cattedra universitaria. Non ha pubblicato su riviste peer-reviewed. E forse è proprio per questo che vede ciò che gli accademici, prigionieri dei loro paradigmi, non possono vedere. Da trent'anni viaggia attraverso i continenti, accumulando prove di una civiltà perduta, globale, avanzata, risalente all'ultima era glaciale. Una civiltà che sarebbe stata spazzata via da un cataclisma circa 12.000 anni fa, lasciando solo frammenti: piramidi sommerse, templi allineati alle stelle, miti che parlano di "diluvi" e "dei venuti dal cielo".</p>
-
-                    <div class="pull-quote">
-                        "Non sto dicendo di avere ragione. Sto dicendo che le domande che pongo sono legittime."
-                    </div>
-
-                    <h2>Il Metodo Hancock</h2>
-                    <p>La critica mainstream lo accusa di "pseudo-archeologia". Ma Hancock risponde: chi ha stabilito il consenso? La storia della scienza è piena di rivoluzionari derisi: Wegener, Semmelweis, Tesla. Oggi senza di loro non esisterebbe la scienza moderna.</p>
-
-                    <h2>Göbekli Tepe</h2>
-                    <p>11.500 anni fa, cacciatori-raccoglitori costruirono un complesso templare che sfida ogni logica. Hancock lo cita come prova che una civiltà avanzata esisteva molto prima di quanto crediamo.</p>
-
-                    <h2>Come Tesla</h2>
-                    <p>Quando Tesla parlava di energia wireless, lo deridevano. Oggi senza Tesla non esisterebbe il mondo moderno. Hancock non ha le prove definitive, ma ha accumulato indizi: mappe antiche, miti convergenti, allineamenti astronomici. Non è una prova, ma un invito a porre domande.</p>
-
-                    <h2>Ancient Apocalypse</h2>
-                    <p>Nel 2022 Netflix ha prodotto una serie che ha scatenato un putiferio. L'archeologia organizzata ha chiesto di ritirarla, etichettandola come "disinformazione". Ma forse la vera disinformazione è nascondere che il nostro passato è molto più misterioso di quanto ci raccontano.</p>
-                </div>
-
-                <div class="donation-prompt">
-                    <p>Se questo articolo ti ha appassionato, sostieni la ricerca indipendente.</p>
-                    <button class="btn btn-primary" onclick="window.parent.openModal()">Sostienici</button>
-                </div>
-
-                <a href="index.html" class="btn-back">← Torna alla home</a>
+    <main class="container">
+        <article>
+            <div class="article-header">
+                <div class="article-category">Archeologia Proibita</div>
+                <h1 class="article-title">Graham Hancock: Il ribelle che sfida l'archeologia</h1>
+                <div class="article-meta">Pubblicato il 1 Marzo 2025 | Tempo di lettura: 10 minuti</div>
             </div>
-        </div>
+
+            <img class="article-image" src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Graham Hancock">
+
+            <div class="article-content">
+                <p class="lead" style="font-size:1.3rem; font-weight:300; color:var(--grigio-scuro);">"La storia che ci hanno insegnato è solo l'ombra di ciò che è realmente accaduto."</p>
+
+                <p>Graham Hancock non ha mai avuto una cattedra universitaria. Non ha pubblicato su riviste peer-reviewed. E forse è proprio per questo che vede ciò che gli accademici, prigionieri dei loro paradigmi, non possono vedere. Da trent'anni viaggia attraverso i continenti, accumulando prove di una civiltà perduta, globale, avanzata, risalente all'ultima era glaciale. Una civiltà che sarebbe stata spazzata via da un cataclisma circa 12.000 anni fa, lasciando solo frammenti: piramidi sommerse, templi allineati alle stelle, miti che parlano di "diluvi" e "dei venuti dal cielo".</p>
+
+                <div class="pull-quote">
+                    "Non sto dicendo di avere ragione. Sto dicendo che le domande che pongo sono legittime."
+                </div>
+
+                <h2>Il Metodo Hancock</h2>
+                <p>La critica mainstream lo accusa di "pseudo-archeologia". Ma Hancock risponde: chi ha stabilito il consenso? La storia della scienza è piena di rivoluzionari derisi: Wegener, Semmelweis, Tesla. Oggi senza di loro non esisterebbe la scienza moderna.</p>
+
+                <h2>Göbekli Tepe</h2>
+                <p>11.500 anni fa, cacciatori-raccoglitori costruirono un complesso templare che sfida ogni logica. Hancock lo cita come prova che una civiltà avanzata esisteva molto prima di quanto crediamo.</p>
+
+                <h2>Come Tesla</h2>
+                <p>Quando Tesla parlava di energia wireless, lo deridevano. Oggi senza Tesla non esisterebbe il mondo moderno. Hancock non ha le prove definitive, ma ha accumulato indizi: mappe antiche, miti convergenti, allineamenti astronomici. Non è una prova, ma un invito a porre domande.</p>
+
+                <h2>Ancient Apocalypse</h2>
+                <p>Nel 2022 Netflix ha prodotto una serie che ha scatenato un putiferio. L'archeologia organizzata ha chiesto di ritirarla, etichettandola come "disinformazione". Ma forse la vera disinformazione è nascondere che il nostro passato è molto più misterioso di quanto ci raccontano.</p>
+            </div>
+
+            <a href="index.html" class="btn-back">← Torna alla home</a>
+        </article>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>NEMESIS</h4>
-                <p>Decodifichiamo la realtà attraverso la storia.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contatti</h4>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <a href="mailto:intotheunknown.nemesis@gmail.com">intotheunknown.nemesis@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span class="telegram-coming">Telegram (in arrivo)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Info</h4>
-                <p>© 2025 NEMESIS</p>
-            </div>
+        <p>© 2025 NEMESIS - Cogito Ergo Revolvo</p>
+        <div class="deepseek-credit">
+            Powered by <a href="https://deepseek.com" target="_blank">DeepSeek AI</a> ⚡
         </div>
     </footer>
-
-    <!-- MODALE DONAZIONI (stessa funzione della home) -->
-    <div class="modal" id="donationModal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3>Sostieni NEMESIS</h3>
-            <p>Puoi contribuire con una donazione volontaria via email. Presto anche corsi esclusivi.</p>
-            <div class="donation-email">
-                <a href="mailto:intotheunknown.nemesis@gmail.com?subject=Donazione">intotheunknown.nemesis@gmail.com</a>
-            </div>
-            <p>Iscriviti alla newsletter:</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie!');">
-                <input type="email" placeholder="La tua email" required>
-                <button type="submit">Iscriviti</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        function openModal() {
-            document.getElementById('donationModal').classList.add('active');
-        }
-        function closeModal() {
-            document.getElementById('donationModal').classList.remove('active');
-        }
-        // Per il pulsante nell'articolo (window.parent se in iframe, ma qui non serve)
-        window.openModal = openModal;
-    </script>
 </body>
 </html>
