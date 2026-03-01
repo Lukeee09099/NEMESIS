@@ -115,10 +115,13 @@
             border-bottom-color: var(--giallo-sole);
         }
 
-        /* Hero */
+        /* Hero con immagine di sfondo */
         .hero {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, var(--giallo-sole) 0%, var(--bianco-panna) 100%);
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(255,209,102,0.9) 0%, rgba(253,249,243,0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
             text-align: center;
         }
 
@@ -142,9 +145,13 @@
 
         .hero-subtitle {
             font-size: 1.3rem;
-            color: var(--grigio-scuro);
+            color: var(--testo-scuro);
             max-width: 700px;
             margin: 0 auto 2rem;
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(5px);
+            padding: 1rem;
+            border-radius: 50px;
         }
 
         /* Ticker con video di sfondo */
@@ -179,7 +186,7 @@
 
         .ticker-content {
             display: inline-block;
-            animation: ticker 40s linear infinite;
+            animation: ticker 70s linear infinite; /* Rallentato a 70s */
             color: white;
             font-weight: 600;
             font-size: 1rem;
@@ -565,6 +572,20 @@
             font-size: 0.9rem;
         }
 
+        .deepseek-credit {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .deepseek-credit a {
+            color: var(--giallo-sole);
+            font-weight: 600;
+        }
+
+        .deepseek-credit a:hover {
+            text-decoration: underline;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -599,7 +620,7 @@
     </header>
 
     <main>
-        <!-- HERO IMPATTANTE -->
+        <!-- HERO CON IMMAGINE DI SFONDO -->
         <section class="hero">
             <div class="container">
                 <h1>La storia <span class="highlight">sanguina</span> negli stessi punti</h1>
@@ -645,7 +666,7 @@
                 <div class="card-grid">
                     <div class="article-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1568322445389-f64a8a2c1f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Göbekli Tepe">
+                            <img src="https://images.pexels.com/photos/160846/gobekli-tepe-archaeological-site-excavation-ancient-160846.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Göbekli Tepe">
                         </div>
                         <div class="card-content">
                             <div class="card-category">Archeologia</div>
@@ -656,7 +677,7 @@
                     </div>
                     <div class="article-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tesla">
+                            <img src="https://images.pexels.com/photos/3214997/pexels-photo-3214997.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tesla">
                         </div>
                         <div class="card-content">
                             <div class="card-category">Scienza</div>
@@ -667,7 +688,7 @@
                     </div>
                     <div class="article-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1544735716-3a90d2f2c6a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machu Picchu">
+                            <img src="https://images.pexels.com/photos/5878961/pexels-photo-5878961.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Machu Picchu">
                         </div>
                         <div class="card-content">
                             <div class="card-category">Civiltà</div>
@@ -714,7 +735,10 @@
             <div class="footer-col">
                 <h4>Informazioni</h4>
                 <p>© 2025 NEMESIS - Cogito Ergo Revolvo</p>
-                <p>Immagini: NASA, ESA, Unsplash</p>
+                <p>Immagini: NASA, ESA, Unsplash, Pexels</p>
+                <div class="deepseek-credit">
+                    Powered by <a href="https://deepseek.com" target="_blank">DeepSeek AI</a> ⚡
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -844,7 +868,9 @@
                     else if (title.toLowerCase().includes('archaeology') || title.toLowerCase().includes('ancient') || title.toLowerCase().includes('civilization')) icon = '🔍';
                     else if (title.toLowerCase().includes('neuroscience') || title.toLowerCase().includes('brain') || title.toLowerCase().includes('mind')) icon = '🧠';
                     else if (title.toLowerCase().includes('space') || title.toLowerCase().includes('nasa') || title.toLowerCase().includes('esa')) icon = '🚀';
-                    html += `<span>${icon} <a href="${article.url || '#'}" target="_blank">${title}</a></span>`;
+                    // Crea un link alla pagina interna con il titolo come parametro
+                    const link = `notizia.html?title=${encodeURIComponent(title)}`;
+                    html += `<span>${icon} <a href="${link}">${title}</a></span>`;
                 });
             }
             ticker.innerHTML = html;
@@ -856,6 +882,3 @@
     </script>
 </body>
 </html>
-
-
-
