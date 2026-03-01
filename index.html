@@ -3,56 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEMESIS - La Macchina del Tempo Cognitiva</title>
+    <title>NEMESIS - Decodifica la Realtà</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Stili aggiuntivi per la home */
-        .hero {
-            background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        /* Se non c'è video, usiamo immagine */
-    </style>
 </head>
 <body>
+    <!-- HEADER FISSO CON MEGA-MENU (BOEING) -->
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">NEMESIS<span>⚡</span></a>
-            
-            <ul class="mega-menu">
-                <li class="menu-item">
-                    <a href="#">Esplora</a>
+            <a href="index.html" class="logo">
+                <img src="https://via.placeholder.com/50x50/0033A0/FFFFFF?text=N" alt="NEMESIS">
+                <span>NEMESIS<span class="rosso">⚡</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <!-- COMMERCIAL -->
+                <div class="nav-item">
+                    <a href="#">Temi</a>
                     <div class="mega-dropdown">
-                        <div class="dropdown-column">
-                            <h4>Temi</h4>
-                            <a href="#">Archeologia</a>
-                            <a href="#">Storia</a>
-                            <a href="#">Politica</a>
-                            <a href="#">Scienza</a>
-                            <a href="#">Filosofia</a>
+                        <div class="dropdown-col">
+                            <h4>Archeologia</h4>
+                            <a href="#">Civiltà perdute</a>
+                            <a href="#">Göbekli Tepe</a>
+                            <a href="#">Piramidi</a>
+                            <a href="#">Graham Hancock</a>
                         </div>
-                        <div class="dropdown-column">
-                            <h4>Metodi</h4>
-                            <a href="#">Le 3 Verità</a>
-                            <a href="#">Cronosanguis</a>
-                            <a href="#">Pattern Recognition</a>
-                            <a href="#">Analisi Predittiva</a>
+                        <div class="dropdown-col">
+                            <h4>Storia</h4>
+                            <a href="#">Pattern bellici</a>
+                            <a href="#">Crisi economiche</a>
+                            <a href="#">Imperi e declini</a>
+                            <a href="#">Rivoluzioni</a>
                         </div>
-                        <div class="dropdown-column highlight">
-                            <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Graham Hancock">
-                            <h5>Nuovo: Graham Hancock</h5>
-                            <p>La civiltà perduta dell'era glaciale</p>
-                            <a href="articolo1.html" style="color: var(--blu-boeing); font-weight: 600;">Leggi →</a>
+                        <div class="dropdown-col highlight">
+                            <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Hancock">
+                            <h5>Graham Hancock</h5>
+                            <p>Il ribelle che sfida l'archeologia</p>
+                            <a href="articolo1.html" class="btn-mini">Leggi →</a>
                         </div>
                     </div>
-                </li>
-                <li class="menu-item"><a href="#">Ricerche</a></li>
-                <li class="menu-item"><a href="#">Community</a></li>
-                <li class="menu-item"><a href="articolo1.html">Hancock</a></li>
-            </ul>
+                </div>
+                <!-- DEFENSE -->
+                <div class="nav-item">
+                    <a href="#">Metodi</a>
+                    <div class="mega-dropdown">
+                        <div class="dropdown-col">
+                            <h4>Le 3 Verità</h4>
+                            <a href="#">Superficiale</a>
+                            <a href="#">Strutturale</a>
+                            <a href="#">Nucleare</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <h4>Cronosanguis</h4>
+                            <a href="#">Pattern 50 anni</a>
+                            <a href="#">Pattern 100 anni</a>
+                            <a href="#">Pattern 500 anni</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- SPACE -->
+                <div class="nav-item">
+                    <a href="#">Ricerche</a>
+                    <div class="mega-dropdown">
+                        <div class="dropdown-col">
+                            <h4>In corso</h4>
+                            <a href="#">Guerra Ucraina</a>
+                            <a href="#">Crisi climatica</a>
+                            <a href="#">Intelligenza artificiale</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- SERVICES -->
+                <div class="nav-item">
+                    <a href="#">Community</a>
+                    <div class="mega-dropdown">
+                        <div class="dropdown-col">
+                            <h4>Cognitive ID</h4>
+                            <a href="#">Accedi</a>
+                            <a href="#">Registrati</a>
+                            <a href="#">La mappa</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAFETY -->
+                <div class="nav-item">
+                    <a href="#">Chi siamo</a>
+                </div>
+                <!-- INNOVATION -->
+                <div class="nav-item">
+                    <a href="articolo1.html">Hancock</a>
+                </div>
+            </nav>
 
-            <div class="search-container">
+            <div class="search-box">
                 <input type="text" placeholder="Cerca pattern...">
                 <button>Cerca</button>
             </div>
@@ -60,192 +102,254 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- HERO CON VIDEO (BOEING) -->
         <section class="hero">
+            <video autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/854058/854058-hd_1920_1080_30fps.mp4" type="video/mp4">
+                <!-- Fallback se il video non carica -->
+            </video>
             <div class="hero-content">
-                <h1>NEMESIS</h1>
-                <p class="subtitle">Cogito Ergo Revolvo</p>
-                <p class="hero-text">47 pattern storici si ripetono in questo momento. Impariamo a vederli.</p>
-                <a href="#articoli" class="btn btn-primary">INIZIA IL VIAGGIO →</a>
+                <div class="hero-subtitle">Benvenuti in NEMESIS</div>
+                <h1>
+                    <span class="line">DECODIFICA</span>
+                    <span class="line">LA REALTÀ</span>
+                </h1>
+                <p class="hero-description">47 pattern storici si ripetono in questo momento. Impariamo a riconoscerli insieme.</p>
+                <div>
+                    <a href="#articoli" class="btn btn-primary">INIZIA IL VIAGGIO</a>
+                    <a href="articolo1.html" class="btn btn-outline">SCOPRI DI PIÙ</a>
+                </div>
             </div>
         </section>
 
-        <!-- Sezione In Primo Piano (Focus.it style) -->
-        <section class="container" id="articoli">
-            <h2 class="section-title">In <span class="accent">Primo Piano</span></h2>
-            <div class="feature-grid">
-                <!-- Card grande -->
-                <div class="article-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Graham Hancock">
-                        <div class="card-category">Archeologia Proibita</div>
-                        <div class="card-icon">📜</div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Graham Hancock: Il ribelle che sfida l'archeologia</h3>
-                        <p class="card-excerpt">Le prove di una civiltà perduta durante l'ultima era glaciale. Perché gli accademici lo odiano?</p>
-                        <div class="card-meta">
-                            <span>28 Feb 2025</span>
-                            <span>12 min</span>
-                        </div>
-                        <a href="articolo1.html" style="color: var(--blu-boeing); font-weight: 600; display: inline-block; margin-top: 1rem;">Leggi l'articolo →</a>
-                    </div>
+        <!-- SEZIONE RECENT NEWS (BOEING) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">ULTIME RICERCHE</h2>
+                    <a href="#" class="view-all">Tutti gli articoli →</a>
                 </div>
 
-                <!-- Card piccole -->
-                <div class="article-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1568322445389-f64a8a2c1f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Göbekli Tepe">
-                        <div class="card-category">Archeologia</div>
-                        <div class="card-icon">🏛️</div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Göbekli Tepe: il tempio che riscrive la storia</h3>
-                        <p class="card-excerpt">11.500 anni fa, cacciatori-raccoglitori costruirono qualcosa di impossibile.</p>
-                        <div class="card-meta">
-                            <span>27 Feb 2025</span>
-                            <span>8 min</span>
+                <div class="news-grid">
+                    <!-- Card grande -->
+                    <div class="news-card large">
+                        <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Graham Hancock">
+                        <div class="news-overlay">
+                            <div class="news-category">Archeologia Proibita</div>
+                            <h3 class="news-title">Graham Hancock: Il ribelle che sfida l'archeologia</h3>
+                            <p class="news-excerpt">Le prove di una civiltà perduta durante l'ultima era glaciale. Perché gli accademici lo odiano?</p>
+                            <a href="articolo1.html" class="news-link">Leggi l'articolo →</a>
                         </div>
                     </div>
-                </div>
 
-                <div class="article-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tesla">
-                        <div class="card-category">Scienza</div>
-                        <div class="card-icon">⚡</div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Tesla: il genio che non seguiva le regole</h3>
-                        <p class="card-excerpt">Come le sue scoperte furono derise perché fuori dal modello logico dominante.</p>
-                        <div class="card-meta">
-                            <span>26 Feb 2025</span>
-                            <span>10 min</span>
+                    <!-- Griglia piccole -->
+                    <div class="feature-small-grid">
+                        <div class="news-card small">
+                            <img src="https://images.unsplash.com/photo-1568322445389-f64a8a2c1f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Göbekli Tepe">
+                            <div class="news-overlay">
+                                <div class="news-category">Archeologia</div>
+                                <h4 class="news-title">Göbekli Tepe: il tempio che riscrive la storia</h4>
+                                <p class="news-excerpt">11.500 anni fa, cacciatori-raccoglitori costruirono qualcosa di impossibile.</p>
+                                <a href="#" class="news-link">Leggi →</a>
+                            </div>
+                        </div>
+                        <div class="news-card small">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tesla">
+                            <div class="news-overlay">
+                                <div class="news-category">Scienza</div>
+                                <h4 class="news-title">Tesla: il genio che non seguiva le regole</h4>
+                                <p class="news-excerpt">Come le sue scoperte furono derise perché fuori dal modello logico dominante.</p>
+                                <a href="#" class="news-link">Leggi →</a>
+                            </div>
+                        </div>
+                        <div class="news-card small">
+                            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spazio">
+                            <div class="news-overlay">
+                                <div class="news-category">Storia</div>
+                                <h4 class="news-title">I pattern delle crisi economiche: 1929-2029</h4>
+                                <p class="news-excerpt">Ogni 100 anni, il ciclo si ripete. Siamo pronti?</p>
+                                <a href="#" class="news-link">Leggi →</a>
+                            </div>
+                        </div>
+                        <div class="news-card small">
+                            <img src="https://images.unsplash.com/photo-1544735716-3a90d2f2c6a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machu Picchu">
+                            <div class="news-overlay">
+                                <div class="news-category">Civiltà</div>
+                                <h4 class="news-title">Machu Picchu: astronomia e potere</h4>
+                                <p class="news-excerpt">Come gli Inca allineavano le loro città alle stelle.</p>
+                                <a href="#" class="news-link">Leggi →</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sezione Temi (ESA style) -->
-        <section class="container">
-            <h2 class="section-title">Esplora per <span class="accent">Temi</span></h2>
-            <div class="themes">
-                <a href="#" class="theme-pill">Archeologia</a>
-                <a href="#" class="theme-pill">Storia</a>
-                <a href="#" class="theme-pill">Politica</a>
-                <a href="#" class="theme-pill">Scienza</a>
-                <a href="#" class="theme-pill">Filosofia</a>
-                <a href="#" class="theme-pill">Tecnologia</a>
-                <a href="#" class="theme-pill">Società</a>
-                <a href="#" class="theme-pill">Pattern</a>
-            </div>
-        </section>
+        <!-- SEZIONE FEATURED PRODUCTS (BOEING) -->
+        <section class="section" style="background: var(--blu-oltremare);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">I NOSTRI METODI</h2>
+                    <a href="#" class="view-all">Esplora tutti →</a>
+                </div>
 
-        <!-- Galleria Immagini (Photolibrary ESA) -->
-        <section class="container">
-            <h2 class="section-title">Galleria <span class="accent">Visiva</span></h2>
-            <div class="image-grid" id="gallery">
-                <div class="grid-item large" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Piramidi">
-                    <div class="caption">Piramidi di Giza, Egitto</div>
-                </div>
-                <div class="grid-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1568322445389-f64a8a2c1f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Göbekli Tepe">
-                    <div class="caption">Göbekli Tepe, Turchia</div>
-                </div>
-                <div class="grid-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1544735716-3a90d2f2c6a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machu Picchu">
-                    <div class="caption">Machu Picchu, Perù</div>
-                </div>
-                <div class="grid-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stonehenge">
-                    <div class="caption">Stonehenge, Inghilterra</div>
-                </div>
-                <div class="grid-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1578328819058-b69f3b3da0dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Angkor Wat">
-                    <div class="caption">Angkor Wat, Cambogia</div>
-                </div>
-                <div class="grid-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spazio profondo">
-                    <div class="caption">Nebulosa, Spazio profondo</div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="3 Verità">
+                        <div class="product-overlay">
+                            <div class="product-category">Metodo</div>
+                            <h3 class="product-title">Le 3 Verità</h3>
+                            <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Scopri</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cronosanguis">
+                        <div class="product-overlay">
+                            <div class="product-category">Storia</div>
+                            <h3 class="product-title">Cronosanguis</h3>
+                            <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Scopri</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pattern">
+                        <div class="product-overlay">
+                            <div class="product-category">Analisi</div>
+                            <h3 class="product-title">Pattern Recognition</h3>
+                            <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">Scopri</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sezione Trending (ESA style) -->
-        <section class="container">
-            <h2 class="section-title">Pattern più cercati <span class="accent">🔥</span></h2>
-            <div class="trending-list">
-                <a href="#" class="trending-item">1. Guerra Ucraina - pattern 1914 (prima guerra mondiale)</a>
-                <a href="#" class="trending-item">2. Crisi economica 2029 - analogie con 1929</a>
-                <a href="#" class="trending-item">3. Ascesa populismi - anni '30 del '900</a>
-                <a href="#" class="trending-item">4. Intelligenza artificiale - rivoluzione industriale</a>
-                <a href="#" class="trending-item">5. Declino imperi - Roma, Impero Britannico</a>
-                <a href="#" class="trending-item">6. Pandemie - 1918, 1348</a>
+        <!-- ROADBLOCK (BOEING) -->
+        <section class="roadblock">
+            <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Terra dallo spazio">
+            <div class="roadblock-content">
+                <h2 class="roadblock-title">IL TUO COGNITIVE ID</h2>
+                <p class="roadblock-description">Ogni esploratore della verità ha un codice unico. Richiedi il tuo per accedere alla mappa dei pattern.</p>
+                <a href="#" class="btn btn-primary">GENERA IL TUO ID</a>
             </div>
         </section>
 
-        <!-- Newsletter (Focus.it style) -->
-        <section class="container">
-            <div class="newsletter-box">
-                <h3>Ricevi i pattern</h3>
-                <p>Iscriviti alla newsletter settimanale e ricevi ogni domenica i pattern della settimana.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie per l\'iscrizione! (demo)');">
-                    <input type="email" placeholder="La tua email" required>
-                    <button type="submit">ISCRIVITI</button>
-                </form>
+        <!-- SEZIONE PURPOSE (BOEING) -->
+        <section class="purpose-section">
+            <div class="container">
+                <p class="hero-subtitle" style="color: var(--grigio-neutro);">LA NOSTRA MISSIONE</p>
+                <h2 class="section-title" style="color: var(--bianco);">Decodificare la realtà attraverso la storia</h2>
+                <p class="hero-description" style="max-width: 800px;">Crediamo che i pattern del passato siano le chiavi per comprendere il presente e anticipare il futuro.</p>
+
+                <div class="purpose-grid">
+                    <div class="purpose-card">
+                        <h4>Le 3 Verità</h4>
+                        <p>Ogni evento ha tre livelli: superficiale, strutturale, nucleare. Impariamo a vederli.</p>
+                        <a href="#" class="news-link">Scopri →</a>
+                    </div>
+                    <div class="purpose-card">
+                        <h4>Cronosanguis</h4>
+                        <p>La storia non si ripete: sanguina negli stessi punti. Identifichiamo i cicli.</p>
+                        <a href="#" class="news-link">Scopri →</a>
+                    </div>
+                    <div class="purpose-card">
+                        <h4>Cognitive ID</h4>
+                        <p>Ogni esploratore ha un codice che lo collega alla rete. Unisciti alla comunità.</p>
+                        <a href="#" class="news-link">Scopri →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE MINI-TILE (BOEING) -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">ESPLORA DI PIÙ</h2>
+                <div class="mini-tile-grid">
+                    <a href="#" class="mini-tile">
+                        <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Hancock">
+                        <span>Graham Hancock</span>
+                    </a>
+                    <a href="#" class="mini-tile">
+                        <img src="https://images.unsplash.com/photo-1568322445389-f64a8a2c1f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Göbekli">
+                        <span>Göbekli Tepe</span>
+                    </a>
+                    <a href="#" class="mini-tile">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Tesla">
+                        <span>Nikola Tesla</span>
+                    </a>
+                    <a href="#" class="mini-tile">
+                        <img src="https://images.unsplash.com/photo-1544735716-3a90d2f2c6a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Machu">
+                        <span>Machu Picchu</span>
+                    </a>
+                    <a href="#" class="mini-tile">
+                        <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Stonehenge">
+                        <span>Stonehenge</span>
+                    </a>
+                    <a href="#" class="mini-tile">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Spazio">
+                        <span>Spazio profondo</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER (BOEING) -->
     <footer>
-        <div class="footer-content">
+        <div class="footer-grid">
             <div class="footer-col">
-                <h4>NEMESIS</h4>
-                <a href="#">Chi siamo</a>
-                <a href="#">Manifesto</a>
-                <a href="#">Contatti</a>
+                <h3 class="logo" style="font-size: 1.5rem; margin-bottom: 1rem;">NEMESIS⚡</h3>
+                <p>Decodifica la realtà attraverso la storia. Unisciti alla rete cognitiva.</p>
+                <div class="social-links">
+                    <a href="#"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                    <a href="#"><svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.104c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.452-3.733c.469-.854.893-1.756 1.213-2.697a13.97 13.97 0 001.505-5.968 9.995 9.995 0 002.456-2.508z"/></svg></a>
+                    <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/></svg></a>
+                </div>
             </div>
             <div class="footer-col">
-                <h4>Esplora</h4>
-                <a href="#">Articoli</a>
-                <a href="#">Temi</a>
-                <a href="#">Galleria</a>
+                <h4>TEMI</h4>
+                <ul>
+                    <li><a href="#">Archeologia</a></li>
+                    <li><a href="#">Storia</a></li>
+                    <li><a href="#">Politica</a></li>
+                    <li><a href="#">Scienza</a></li>
+                </ul>
             </div>
             <div class="footer-col">
-                <h4>Social</h4>
-                <a href="#">Telegram</a>
-                <a href="#">X</a>
-                <a href="#">Instagram</a>
+                <h4>METODI</h4>
+                <ul>
+                    <li><a href="#">Le 3 Verità</a></li>
+                    <li><a href="#">Cronosanguis</a></li>
+                    <li><a href="#">Pattern</a></li>
+                </ul>
             </div>
             <div class="footer-col">
-                <h4>Legale</h4>
-                <a href="#">Privacy</a>
-                <a href="#">Cookie</a>
-                <a href="#">Termini</a>
+                <h4>COMUNITÀ</h4>
+                <ul>
+                    <li><a href="#">Cognitive ID</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Mappa</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CHI SIAMO</h4>
+                <ul>
+                    <li><a href="#">Manifesto</a></li>
+                    <li><a href="#">Contatti</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>LEGALE</h4>
+                <ul>
+                    <li><a href="#">Termini</a></li>
+                    <li><a href="#">Cookie</a></li>
+                </ul>
             </div>
         </div>
-        <div class="copyright">
+        <div class="footer-bottom">
             <p>© 2025 NEMESIS - Cogito Ergo Revolvo. Tutti i diritti riservati.</p>
             <p>Immagini: NASA, ESA, Unsplash. Ispirazioni: Hancock, Tesla.</p>
         </div>
     </footer>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
-        <img id="lightbox-img" src="" alt="">
-        <div class="lightbox-caption" id="lightbox-caption"></div>
-    </div>
-
-    <script>
-        function openLightbox(element) {
-            const img = element.querySelector('img').src;
-            const caption = element.querySelector('.caption').innerText;
-            document.getElementById('lightbox-img').src = img;
-            document.getElementById('lightbox-caption').innerText = caption;
-            document.getElementById('lightbox').classList.add('active');
-        }
-    </script>
 </body>
 </html>
