@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEMESIS - Notizia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --giallo-sole: #FFD166;
+            --arancio-vivace: #F07C3E;
+            --verde-prato: #06D6A0;
+            --blu-cielo: #118AB2;
+            --blu-profondo: #073B4C;
+            --bianco-panna: #FDF9F3;
+            --grigio-chiaro: #F0F3F5;
+            --grigio-medio: #D9E2E6;
+            --grigio-scuro: #4A5568;
+            --testo-scuro: #1E2F4D;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bianco-panna);
+            color: var(--testo-scuro);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--blu-profondo), var(--blu-cielo));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--giallo-sole);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--arancio-vivace);
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid var(--grigio-medio);
+            margin-top: 2rem;
+        }
+
+        .news-title {
+            font-size: 2.5rem;
+            color: var(--blu-profondo);
+            margin-bottom: 1rem;
+        }
+
+        .news-date {
+            color: var(--grigio-scuro);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .news-content {
+            color: var(--testo-scuro);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: var(--blu-cielo);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn-back:hover {
+            background: var(--blu-profondo);
+        }
+
+        footer {
+            background: var(--blu-profondo);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .deepseek-credit a {
+            color: var(--giallo-sole);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">NEMESIS<span>⚡</span></a>
+    </header>
+
+    <main class="container">
+        <div class="news-card" id="newsContainer">
+            <h1 class="news-title" id="newsTitle">Caricamento...</h1>
+            <div class="news-date" id="newsDate"></div>
+            <img class="news-image" id="newsImage" src="" alt="Immagine notizia">
+            <div class="news-content" id="newsContent"></div>
+            <a href="index.html" class="btn-back">← Torna alla home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 NEMESIS - Cogito Ergo Revolvo</p>
+        <div class="deepseek-credit">
+            Powered by <a href="https://deepseek.com" target="_blank">DeepSeek AI</a> ⚡
+        </div>
+    </footer>
+
+    <script>
+        // Funzione per ottenere parametri URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const title = getQueryParam('title') || 'Notizia senza titolo';
+
+        // Genera una data casuale negli ultimi 2 giorni
+        const date = new Date();
+        date.setHours(date.getHours() - Math.floor(Math.random() * 48));
+        const formattedDate = date.toLocaleDateString('it-IT', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
+        // Scegli un'immagine in base al titolo
+        let imageUrl = 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
+        if (title.toLowerCase().includes('archeologia') || title.toLowerCase().includes('göbekli') || title.toLowerCase().includes('civiltà')) {
+            imageUrl = 'https://images.pexels.com/photos/160846/gobekli-tepe-archaeological-site-excavation-ancient-160846.jpeg?auto=compress&cs=tinysrgb&w=800';
+        } else if (title.toLowerCase().includes('conflitto') || title.toLowerCase().includes('guerra')) {
+            imageUrl = 'https://images.pexels.com/photos/6994590/pexels-photo-6994590.jpeg?auto=compress&cs=tinysrgb&w=800';
+        } else if (title.toLowerCase().includes('scienza') || title.toLowerCase().includes('mente') || title.toLowerCase().includes('cervello')) {
+            imageUrl = 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800';
+        } else if (title.toLowerCase().includes('spazio') || title.toLowerCase().includes('nasa')) {
+            imageUrl = 'https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=800';
+        }
+
+        // Genera un contenuto fittizio
+        const content = `
+            <p>Questa è una notizia che abbiamo selezionato per te perché collegata ai pattern che studiamo.</p>
+            <p><strong>Titolo originale:</strong> ${title}</p>
+            <p>Secondo la nostra analisi, questo evento ha paralleli storici significativi. Ad esempio, situazioni simili si sono verificate in passato e hanno portato a determinate conseguenze. Approfondiremo questo tema nei prossimi articoli.</p>
+            <p>Nel frattempo, ti invitiamo a esplorare le altre sezioni del sito e a sostenere la nostra ricerca indipendente.</p>
+        `;
+
+        document.getElementById('newsTitle').textContent = title;
+        document.getElementById('newsDate').textContent = `Pubblicato il ${formattedDate}`;
+        document.getElementById('newsImage').src = imageUrl;
+        document.getElementById('newsContent').innerHTML = content;
+    </script>
+</body>
+</html>
