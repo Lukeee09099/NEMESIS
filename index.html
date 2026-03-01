@@ -4,7 +4,586 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEMESIS - La Verità è nei Pattern</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== STILI COMPLETI ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --giallo-sole: #FFD166;
+            --arancio-vivace: #F07C3E;
+            --verde-prato: #06D6A0;
+            --blu-cielo: #118AB2;
+            --blu-profondo: #073B4C;
+            --bianco-panna: #FDF9F3;
+            --grigio-chiaro: #F0F3F5;
+            --grigio-medio: #D9E2E6;
+            --grigio-scuro: #4A5568;
+            --testo-scuro: #1E2F4D;
+            --rosso-avviso: #EF476F;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bianco-panna);
+            color: var(--testo-scuro);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+        h2 { font-size: clamp(2rem, 5vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--blu-profondo), var(--blu-cielo));
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--giallo-sole);
+        }
+
+        .logo span {
+            color: var(--arancio-vivace);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: var(--giallo-sole);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--giallo-sole) 0%, var(--bianco-panna) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            color: var(--blu-profondo);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 .highlight {
+            color: var(--arancio-vivace);
+            display: inline-block;
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--grigio-scuro);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Ticker con video di sfondo */
+        .news-ticker {
+            position: relative;
+            background: var(--verde-prato);
+            overflow: hidden;
+            box-shadow: inset 0 -2px 5px rgba(0,0,0,0.03);
+            height: 60px;
+        }
+
+        .ticker-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ticker-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 40s linear infinite;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 60px;
+            padding-left: 100%;
+        }
+
+        .ticker-content span {
+            display: inline-block;
+            padding: 0 2rem;
+        }
+
+        .ticker-content a {
+            color: white;
+            font-weight: 700;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        .ticker-content a:hover {
+            color: var(--giallo-sole);
+            border-bottom-color: var(--giallo-sole);
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Sezioni */
+        .featured-section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--blu-profondo);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--arancio-vivace);
+        }
+
+        .featured-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid var(--grigio-medio);
+        }
+
+        .featured-image {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s;
+        }
+
+        .featured-card:hover .featured-image img {
+            transform: scale(1.05);
+        }
+
+        .featured-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-category {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--arancio-vivace);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .featured-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--blu-profondo);
+        }
+
+        .featured-content p {
+            color: var(--grigio-scuro);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Card articoli */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid var(--grigio-medio);
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .article-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--arancio-vivace);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--blu-profondo);
+        }
+
+        .card-excerpt {
+            color: var(--grigio-scuro);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--arancio-vivace);
+            color: white;
+            box-shadow: 0 4px 15px rgba(240, 124, 62, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e06e3a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 124, 62, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--blu-profondo);
+            color: var(--blu-profondo);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--blu-profondo);
+            color: white;
+        }
+
+        /* Supporto e modale */
+        .support-section {
+            padding: 4rem 0;
+            background: var(--grigio-chiaro);
+            text-align: center;
+        }
+
+        .support-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            border: 1px solid var(--grigio-medio);
+        }
+
+        .support-box h2 {
+            color: var(--blu-profondo);
+            margin-bottom: 1rem;
+        }
+
+        .support-box p {
+            color: var(--grigio-scuro);
+            margin-bottom: 2rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--grigio-scuro);
+        }
+
+        .modal-close:hover {
+            color: var(--rosso-avviso);
+        }
+
+        .modal h3 {
+            color: var(--blu-profondo);
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            color: var(--grigio-scuro);
+            margin-bottom: 2rem;
+        }
+
+        .donation-email {
+            background: var(--grigio-chiaro);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            word-break: break-all;
+        }
+
+        .donation-email a {
+            color: var(--blu-cielo);
+            font-weight: 600;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--grigio-medio);
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 1.5rem;
+            background: var(--verde-prato);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: #05b389;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--blu-profondo);
+            color: white;
+            padding: 3rem 20px 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--giallo-sole);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+        }
+
+        .contact-item a:hover {
+            color: var(--giallo-sole);
+        }
+
+        .telegram-coming {
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,11 +607,16 @@
             </div>
         </section>
 
-        <!-- TICKER NOTIZIE IN TEMPO REALE -->
+        <!-- TICKER NOTIZIE CON VIDEO DI SFONDO -->
         <div class="news-ticker" id="newsTicker">
-            <div class="ticker-content" id="tickerContent">
-                <!-- Le notizie verranno inserite qui via JavaScript -->
-                <span>Caricamento notizie dal mondo...</span>
+            <video class="ticker-video-bg" autoplay loop muted playsinline>
+                <source src="https://cdn.pixabay.com/vimeo/342248012/nebula-3487.mp4?width=1280&hash=0e9f7e8d6b7f9a4c8d3b2a1e5f7c8d9e" type="video/mp4">
+                <!-- Fallback: immagine se video non carica -->
+            </video>
+            <div class="ticker-wrapper">
+                <div class="ticker-content" id="tickerContent">
+                    <span>Caricamento notizie dal mondo...</span>
+                </div>
             </div>
         </div>
 
@@ -67,7 +651,7 @@
                             <div class="card-category">Archeologia</div>
                             <h3 class="card-title">Göbekli Tepe: il tempio che riscrive la storia</h3>
                             <p class="card-excerpt">11.500 anni fa, cacciatori-raccoglitori costruirono qualcosa di impossibile. Come hanno fatto?</p>
-                            <a href="#" class="btn btn-outline" style="padding:0.5rem 1.5rem; font-size:0.9rem;" onclick="alert('In preparazione. Torna presto!')">Leggi →</a>
+                            <a href="#" class="btn btn-outline" onclick="alert('In preparazione. Torna presto!')">Leggi →</a>
                         </div>
                     </div>
                     <div class="article-card">
@@ -78,7 +662,7 @@
                             <div class="card-category">Scienza</div>
                             <h3 class="card-title">Tesla: il genio che non seguiva le regole</h3>
                             <p class="card-excerpt">Come le sue scoperte furono derise perché fuori dal modello logico dominante.</p>
-                            <a href="#" class="btn btn-outline" style="padding:0.5rem 1.5rem; font-size:0.9rem;" onclick="alert('In preparazione. Torna presto!')">Leggi →</a>
+                            <a href="#" class="btn btn-outline" onclick="alert('In preparazione. Torna presto!')">Leggi →</a>
                         </div>
                     </div>
                     <div class="article-card">
@@ -89,7 +673,7 @@
                             <div class="card-category">Civiltà</div>
                             <h3 class="card-title">Machu Picchu: astronomia e potere</h3>
                             <p class="card-excerpt">Come gli Inca allineavano le loro città alle stelle. Un sistema cosmico dimenticato.</p>
-                            <a href="#" class="btn btn-outline" style="padding:0.5rem 1.5rem; font-size:0.9rem;" onclick="alert('In preparazione. Torna presto!')">Leggi →</a>
+                            <a href="#" class="btn btn-outline" onclick="alert('In preparazione. Torna presto!')">Leggi →</a>
                         </div>
                     </div>
                 </div>
@@ -155,74 +739,121 @@
         </div>
     </div>
 
- <script>
-    function openModal() {
-        document.getElementById('donationModal').classList.add('active');
-    }
-    function closeModal() {
-        document.getElementById('donationModal').classList.remove('active');
-    }
-
-    const API_KEY = 'b107dd291f7f4307a4482b370b0b8ab9';
-
-    async function fetchNews() {
-        const ticker = document.getElementById('tickerContent');
-        // Notizie di fallback nel caso l'API non funzioni
-        const fallbackNews = [
-            { title: 'Conflitto in Medio Oriente: ultime notizie', url: '#', icon: '🔥' },
-            { title: 'Crisi economica: cosa aspettarsi', url: '#', icon: '📉' },
-            { title: 'Scoperta archeologica in Egitto', url: '#', icon: '🔍' },
-            { title: 'Nuove rivelazioni su Göbekli Tepe', url: '#', icon: '🔍' },
-            { title: 'Clima: allarme ONU', url: '#', icon: '🌱' }
-        ];
-
-        try {
-            // Cerchiamo notizie in inglese su argomenti generali (più probabilità di risultati)
-            const response = await fetch(`https://newsapi.org/v2/everything?q=world+news+politics&language=en&pageSize=10&apiKey=${API_KEY}`);
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-            const data = await response.json();
-            if (data.articles && data.articles.length > 0) {
-                let html = '';
-                // Duplichiamo per effetto continuo
-                for (let i = 0; i < 3; i++) {
-                    data.articles.forEach(article => {
-                        let icon = '🌍';
-                        const title = article.title;
-                        if (title.toLowerCase().includes('war') || title.toLowerCase().includes('conflict') || title.toLowerCase().includes('israel') || title.toLowerCase().includes('iran')) icon = '🔥';
-                        else if (title.toLowerCase().includes('crisis') || title.toLowerCase().includes('economy') || title.toLowerCase().includes('stock')) icon = '📉';
-                        else if (title.toLowerCase().includes('climate') || title.toLowerCase().includes('environment') || title.toLowerCase().includes('global warming')) icon = '🌱';
-                        else if (title.toLowerCase().includes('discovery') || title.toLowerCase().includes('archaeology') || title.toLowerCase().includes('ancient')) icon = '🔍';
-                        html += `<span>${icon} <a href="${article.url}" target="_blank">${article.title}</a></span>`;
-                    });
-                }
-                ticker.innerHTML = html;
-            } else {
-                // Nessun articolo, usiamo fallback
-                useFallback();
-            }
-        } catch (error) {
-            console.error('Errore API, uso fallback:', error);
-            useFallback();
+    <script>
+        function openModal() {
+            document.getElementById('donationModal').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('donationModal').classList.remove('active');
         }
 
-        function useFallback() {
+        // ===== NOTIZIE REALI CON FALLBACK MULTIPLO =====
+        const API_KEY = 'b107dd291f7f4307a4482b370b0b8ab9'; // tua chiave
+        const ticker = document.getElementById('tickerContent');
+
+        // Funzione per fetchare notizie da NewsAPI
+        async function fetchNewsFromNewsAPI() {
+            const queries = [
+                'geopolitics OR war OR conflict',
+                'archaeology OR ancient civilization',
+                'neuroscience OR psychology OR mind',
+                'technology OR AI OR space'
+            ];
+            // Prendiamo una query casuale tra quelle
+            const randomQuery = queries[Math.floor(Math.random() * queries.length)];
+            const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(randomQuery)}&language=en&pageSize=10&apiKey=${API_KEY}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.articles && data.articles.length > 0) {
+                    return data.articles;
+                }
+            } catch (e) {
+                console.warn('NewsAPI error:', e);
+            }
+            return null;
+        }
+
+        // Funzione per fetchare notizie da RSS ANSA via proxy
+        async function fetchNewsFromANSA() {
+            const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=';
+            const rssUrl = 'http://www.ansa.it/sito/notizie/mondo/mondo_rss.xml';
+            try {
+                const response = await fetch(proxyUrl + encodeURIComponent(rssUrl));
+                const data = await response.json();
+                if (data.items && data.items.length > 0) {
+                    return data.items.map(item => ({
+                        title: item.title,
+                        url: item.link
+                    }));
+                }
+            } catch (e) {
+                console.warn('ANSA RSS error:', e);
+            }
+            return null;
+        }
+
+        // Funzione per fetchare notizie da BBC RSS (in inglese) come fallback
+        async function fetchNewsFromBBC() {
+            const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=';
+            const rssUrl = 'http://feeds.bbci.co.uk/news/world/rss.xml';
+            try {
+                const response = await fetch(proxyUrl + encodeURIComponent(rssUrl));
+                const data = await response.json();
+                if (data.items && data.items.length > 0) {
+                    return data.items.map(item => ({
+                        title: item.title,
+                        url: item.link
+                    }));
+                }
+            } catch (e) {
+                console.warn('BBC RSS error:', e);
+            }
+            return null;
+        }
+
+        // Funzione principale per aggiornare il ticker
+        async function updateTicker() {
+            let articles = await fetchNewsFromNewsAPI();
+            if (!articles) {
+                articles = await fetchNewsFromANSA();
+            }
+            if (!articles) {
+                articles = await fetchNewsFromBBC();
+            }
+            if (!articles) {
+                // Fallback hard-coded (notizie di esempio, ma reali in futuro)
+                articles = [
+                    { title: 'Scoperta una nuova civiltà precolombiana', url: '#' },
+                    { title: 'Conflitto in Medio Oriente: ultime notizie', url: '#' },
+                    { title: 'Studio: la meditazione cambia il cervello', url: '#' },
+                    { title: 'Nuove immagini dal telescopio James Webb', url: '#' },
+                    { title: 'Göbekli Tepe: nuovi scavi rivelano segreti', url: '#' },
+                ];
+            }
+
             let html = '';
+            // Duplichiamo per effetto continuo
             for (let i = 0; i < 3; i++) {
-                fallbackNews.forEach(item => {
-                    html += `<span>${item.icon} <a href="${item.url}" onclick="alert('Notizia di esempio. Attiva l\'API per notizie reali.')">${item.title}</a></span>`;
+                articles.forEach(article => {
+                    let icon = '🌍';
+                    const title = article.title;
+                    if (title.toLowerCase().includes('war') || title.toLowerCase().includes('conflict') || title.toLowerCase().includes('israel') || title.toLowerCase().includes('iran')) icon = '🔥';
+                    else if (title.toLowerCase().includes('crisis') || title.toLowerCase().includes('economy')) icon = '📉';
+                    else if (title.toLowerCase().includes('climate') || title.toLowerCase().includes('environment')) icon = '🌱';
+                    else if (title.toLowerCase().includes('archaeology') || title.toLowerCase().includes('ancient') || title.toLowerCase().includes('civilization')) icon = '🔍';
+                    else if (title.toLowerCase().includes('neuroscience') || title.toLowerCase().includes('brain') || title.toLowerCase().includes('mind')) icon = '🧠';
+                    else if (title.toLowerCase().includes('space') || title.toLowerCase().includes('nasa') || title.toLowerCase().includes('esa')) icon = '🚀';
+                    html += `<span>${icon} <a href="${article.url || '#'}" target="_blank">${title}</a></span>`;
                 });
             }
             ticker.innerHTML = html;
         }
-    }
 
-    // Carica notizie all'avvio
-    fetchNews();
-    // Aggiorna ogni 10 minuti
-    setInterval(fetchNews, 600000);
-</script>
+        // Avvia subito e poi ogni 10 minuti
+        updateTicker();
+        setInterval(updateTicker, 600000);
+    </script>
 </body>
 </html>
 
