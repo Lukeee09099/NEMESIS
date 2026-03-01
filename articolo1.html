@@ -3,353 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graham Hancock - Il ribelle - NEMESIS</title>
+    <title>Graham Hancock - NEMESIS</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Stili specifici articolo */
         .article-page {
-            margin-top: 100px;
-            background: var(--grigio-chiaro);
+            background: var(--bianco-panna);
+            padding: 4rem 0;
+        }
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+            border: 1px solid var(--grigio-medio);
         }
         .article-header {
-            position: relative;
-            height: 60vh;
-            min-height: 400px;
-            display: flex;
-            align-items: flex-end;
-            padding: 4rem;
-            background: linear-gradient(to top, var(--overlay-chiaro) 0%, transparent 50%),
-                        url('https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-        }
-        .article-header-content {
-            max-width: 800px;
-            background: rgba(255,255,255,0.3);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 12px;
+            margin-bottom: 2rem;
         }
         .article-category {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--rosso-potenza);
-            margin-bottom: 1rem;
+            color: var(--arancio-vivace);
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
         .article-title {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
             color: var(--blu-profondo);
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
         .article-meta {
             display: flex;
             gap: 2rem;
             color: var(--grigio-scuro);
+            margin-bottom: 2rem;
             font-size: 0.9rem;
         }
-        .article-container {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 2rem;
         }
-        .article-container p {
-            font-size: 1.1rem;
+        .article-content p {
             margin-bottom: 1.5rem;
-            color: var(--grigio-scuro);
+            color: var(--testo-scuro);
+            line-height: 1.8;
         }
-        .article-container h2 {
+        .article-content h2 {
             margin: 2rem 0 1rem;
             color: var(--blu-profondo);
         }
         .pull-quote {
-            margin: 3rem 0;
-            padding: 2rem 3rem;
-            background: var(--bianco);
-            border-left: 4px solid var(--rosso-potenza);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            margin: 2rem 0;
+            padding: 1.5rem 2rem;
+            background: var(--grigio-chiaro);
+            border-left: 4px solid var(--arancio-vivace);
             font-style: italic;
-            color: var(--blu-profondo);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            border-radius: 0 12px 12px 0;
-        }
-        .pull-quote cite {
-            display: block;
-            margin-top: 1rem;
-            font-size: 1rem;
-            font-style: normal;
-            color: var(--grigio-scuro);
-        }
-        .image-full {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            margin: 3rem 0;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        .highlight-box {
-            background: var(--bianco);
-            border: 1px solid var(--grigio-medio);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
-        }
-        .timeline {
-            display: flex;
-            justify-content: space-between;
-            margin: 3rem 0;
-            padding: 2rem 0;
-            border-top: 2px solid var(--grigio-medio);
-            border-bottom: 2px solid var(--grigio-medio);
-        }
-        .timeline-item {
-            text-align: center;
-            flex: 1;
-        }
-        .timeline-year {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--rosso-potenza);
-        }
-        .timeline-desc {
-            font-size: 0.9rem;
-            color: var(--grigio-scuro);
-        }
-        .netflix-banner {
-            background: #E50914;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-        .netflix-banner h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--bianco);
-        }
-        .netflix-banner p {
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 1.5rem;
-        }
-        .netflix-banner .btn {
-            background: var(--bianco);
-            color: #E50914;
-        }
-        .related-articles {
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 2px solid var(--grigio-medio);
-        }
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .related-card {
-            background: var(--bianco);
-            padding: 1.5rem;
-            border-radius: 12px;
-            transition: var(--transition);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
-            border: 1px solid var(--grigio-medio);
-        }
-        .related-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-        .related-card h4 {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
             color: var(--blu-profondo);
         }
-        .related-card p {
-            font-size: 0.9rem;
-            color: var(--grigio-scuro);
-            margin-bottom: 1rem;
-        }
-        .related-card a {
-            color: var(--rosso-potenza);
+        .btn-back {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: var(--blu-cielo);
+            color: white;
+            border-radius: 50px;
             font-weight: 600;
+        }
+        .btn-back:hover {
+            background: var(--blu-profondo);
+        }
+        .donation-prompt {
+            background: var(--giallo-sole);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .donation-prompt p {
+            margin-bottom: 1rem;
+            color: var(--blu-profondo);
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <span>NEMESIS<span class="rosso">⚡</span></span>
-            </a>
-
+            <a href="index.html" class="logo">NEMESIS<span>⚡</span></a>
             <nav class="nav-links">
-                <div class="nav-item">
-                    <a href="index.html#temi">Temi</a>
-                    <div class="mega-dropdown">
-                        <div class="dropdown-col">
-                            <h4>Archeologia</h4>
-                            <a href="#">Civiltà perdute</a>
-                            <a href="#">Göbekli Tepe</a>
-                            <a href="#">Piramidi</a>
-                            <a href="articolo1.html">Graham Hancock</a>
-                        </div>
-                        <div class="dropdown-col">
-                            <h4>Storia</h4>
-                            <a href="#">Pattern bellici</a>
-                            <a href="#">Crisi economiche</a>
-                            <a href="#">Imperi e declini</a>
-                            <a href="#">Rivoluzioni</a>
-                        </div>
-                        <div class="dropdown-col highlight">
-                            <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Hancock">
-                            <h5>Graham Hancock</h5>
-                            <p>Il ribelle che sfida l'archeologia</p>
-                            <a href="articolo1.html" class="btn-mini">Leggi →</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="nav-item">
-                    <a href="index.html#metodi">Metodi</a>
-                </div>
-                <div class="nav-item">
-                    <a href="index.html#ricerche">Ricerche</a>
-                </div>
-                <div class="nav-item">
-                    <a href="index.html#community">Community</a>
-                </div>
-                <div class="nav-item">
-                    <a href="index.html#chi-siamo">Chi siamo</a>
-                </div>
-                <div class="nav-item">
-                    <a href="articolo1.html">Hancock</a>
-                </div>
+                <a href="index.html#articolo-settimana">La ricerca</a>
+                <a href="index.html#ultime-ricerche">Articoli</a>
+                <a href="index.html#support" onclick="openModal()">Sostienici</a>
+                <a href="index.html#contatti">Contatti</a>
             </nav>
-
-            <div class="search-box">
-                <input type="text" placeholder="Cerca pattern...">
-                <button onclick="alert('Funzione di ricerca in sviluppo.')">Cerca</button>
-            </div>
         </div>
     </header>
 
     <main class="article-page">
-        <header class="article-header">
-            <div class="article-header-content">
-                <div class="article-category">Archeologia Proibita</div>
-                <h1 class="article-title">Graham Hancock: Il ribelle che sfida l'archeologia</h1>
-                <div class="article-meta">
-                    <span>Pubblicato: 28 Febbraio 2025</span>
-                    <span>Tempo di lettura: 12 minuti</span>
-                    <span>di: NEMESIS Research</span>
-                </div>
-            </div>
-        </header>
-
-        <div class="article-container">
-            <p class="lead" style="font-size: 1.4rem; font-weight: 300; color: var(--grigio-scuro); margin-bottom: 2rem;">
-                "La storia che ci hanno insegnato è solo l'ombra di ciò che è realmente accaduto. E chi cerca di vedere oltre viene deriso, finché le sue scoperte non diventano impossibili da ignorare."
-            </p>
-
-            <p>Graham Hancock non ha mai avuto una cattedra universitaria. Non ha pubblicato su riviste peer-reviewed. E forse è proprio per questo che vede ciò che gli accademici, prigionieri dei loro paradigmi, non possono vedere. Da trent'anni viaggia attraverso i continenti, accumulando prove di una civiltà perduta, globale, avanzata, risalente all'ultima era glaciale. Una civiltà che sarebbe stata spazzata via da un cataclisma circa 12.000 anni fa, lasciando solo frammenti: piramidi sommerse, templi allineati alle stelle, miti che parlano di "diluvi" e "dei venuti dal cielo".</p>
-
-            <div class="pull-quote">
-                "Non sto dicendo di avere ragione. Sto dicendo che le domande che pongo sono legittime, e che il disprezzo con cui vengono accolte è sintomo di paura, non di scienza."
-                <cite>— Graham Hancock</cite>
-            </div>
-
-            <img src="https://images.unsplash.com/photo-1568322445389-f64a8a2c1f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Piramidi di Giza" class="image-full">
-
-            <h2>Il Metodo Hancock: Perché gli Accademici lo Odiano</h2>
-
-            <p>La critica mainstream lo accusa di "pseudo-archeologia", di selezionare solo le prove che confermano le sue teorie, di ignorare il consenso scientifico. Ma Hancock risponde con una domanda scomoda: chi ha stabilito il consenso? E chi decide cosa è "scientifico"? La storia della scienza è piena di rivoluzionari derisi: Wegener e la deriva dei continenti, Semmelweis e il lavaggio delle mani, Tesla e la corrente alternata.</p>
-
-            <div class="highlight-box">
-                <p><strong>Il punto non è se Hancock abbia ragione.</strong> Il punto è: perché così tante scoperte vengono ignorate solo perché non si incastrano nel paradigma dominante? Göbekli Tepe, un complesso templare di 11.500 anni fa costruito da cacciatori-raccoglitori, esiste. E contraddice tutto ciò che credevamo di sapere sull'alba della civiltà.</p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">1995</div>
-                    <div class="timeline-desc">Pubblicazione di "Impronte degli Dei"</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2008</div>
-                    <div class="timeline-desc">Scoperta di Göbekli Tepe</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-desc">Netflix: "Ancient Apocalypse"</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-desc">Il dibattito continua</div>
-                </div>
-            </div>
-
-            <h2>Come Tesla: Il Genio che non Seguiva le Regole</h2>
-
-            <p>Quando Nikola Tesla parlava di energia wireless, corrente alternata, comunicazioni a distanza, i suoi contemporanei lo deridevano. "Impossibile", dicevano. Oggi senza Tesla non esisterebbe il mondo moderno. Tesla non seguiva il modello logico dominante. Lo aveva superato. Hancock non ha le prove definitive, ma ha accumulato un'impressionante mole di indizi: mappe antiche che mostrano coste sommerse, miti convergenti da continenti diversi, allineamenti astronomici che richiedono conoscenze avanzate. Non è una prova, ma è un invito a porre domande.</p>
-
-            <div class="pull-quote">
-                "Le più grandi scoperte non nascono mai all'interno del modello logico dominante. Nascono quando qualcuno ha il coraggio di guardare fuori, di pensare l'impensabile."
-            </div>
-
-            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Spazio profondo" class="image-full">
-
-            <h2>Il Documentario che Sta Cambiando la Narrativa</h2>
-
-            <p>Nel 2022, Netflix ha prodotto "Ancient Apocalypse", una serie in due stagioni che ha seguito Hancock nei suoi viaggi. Il risultato è stato un fenomeno globale, visto da milioni di persone. E ha scatenato un putiferio: l'archeologia organizzata ha chiesto a Netflix di ritirarla, etichettandola come "disinformazione". Ma forse la vera disinformazione è nascondere al pubblico che il nostro passato è molto più misterioso di quanto ci raccontano. La serie è disponibile su Netflix, e vale ogni minuto.</p>
-
-            <div class="netflix-banner">
-                <h3>GUARDA SU NETFLIX</h3>
-                <p>Ancient Apocalypse - Le civiltà perdute</p>
-                <a href="https://www.netflix.com/it/title/81211003" target="_blank" class="btn btn-primary">SCOPRI DI PIÙ</a>
-            </div>
-
-            <h2>La Domanda che Resta</h2>
-
-            <p>Forse Hancock ha torto. Forse le sue prove sono interpretazioni azzardate. Ma una domanda rimane: perché abbiamo così paura di esplorare l'idea che la storia umana sia più antica, più complessa, più misteriosa di quanto ci hanno insegnato? Forse perché, come diceva Hancock, "se scoprissimo che una civiltà avanzata esisteva 12.000 anni fa, saremmo costretti a chiederci: cosa succederà alla nostra?"</p>
-
-            <div style="text-align: center; margin: 4rem 0;">
-                <h3 style="color: var(--rosso-potenza); margin-bottom: 1rem;">🎯 DOMANDA PROIBITA</h3>
-                <p style="font-size: 1.3rem; font-style: italic; max-width: 600px; margin: 0 auto; color: var(--grigio-scuro);">Quante altre verità vengono nascoste perché non si adattano al modello?</p>
-                <button class="btn btn-primary" style="margin-top: 2rem;" onclick="alert('La verità ha bisogno di testimoni. Condividi questo articolo.')">CONDIVIDI LA RIVELAZIONE</button>
-            </div>
-
-            <div class="related-articles">
-                <h3>Approfondimenti correlati</h3>
-                <div class="related-grid">
-                    <div class="related-card">
-                        <h4>I Pattern della Storia</h4>
-                        <p>Perché le civiltà sorgono e crollano in cicli regolari.</p>
-                        <a href="#" onclick="alert('Articolo in preparazione.')">Leggi →</a>
-                    </div>
-                    <div class="related-card">
-                        <h4>Le 3 Verità</h4>
-                        <p>Il metodo per decodificare qualsiasi narrazione.</p>
-                        <a href="#" onclick="alert('Articolo in preparazione.')">Leggi →</a>
-                    </div>
-                    <div class="related-card">
-                        <h4>Göbekli Tepe</h4>
-                        <p>Il tempio che riscrive la storia.</p>
-                        <a href="#" onclick="alert('Articolo in preparazione.')">Leggi →</a>
+        <div class="container">
+            <div class="article-container">
+                <div class="article-header">
+                    <div class="article-category">Archeologia Proibita</div>
+                    <h1 class="article-title">Graham Hancock: Il ribelle che sfida l'archeologia</h1>
+                    <div class="article-meta">
+                        <span>Pubblicato: 1 Marzo 2025</span>
+                        <span>Tempo di lettura: 10 minuti</span>
                     </div>
                 </div>
-            </div>
 
-            <div style="text-align: center; margin: 3rem 0;">
-                <a href="index.html" class="btn btn-primary">← TORNA ALLA HOME</a>
+                <img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Graham Hancock" class="article-image">
+
+                <div class="article-content">
+                    <p class="lead" style="font-size:1.3rem; font-weight:300; color:var(--grigio-scuro);">"La storia che ci hanno insegnato è solo l'ombra di ciò che è realmente accaduto."</p>
+
+                    <p>Graham Hancock non ha mai avuto una cattedra universitaria. Non ha pubblicato su riviste peer-reviewed. E forse è proprio per questo che vede ciò che gli accademici, prigionieri dei loro paradigmi, non possono vedere. Da trent'anni viaggia attraverso i continenti, accumulando prove di una civiltà perduta, globale, avanzata, risalente all'ultima era glaciale. Una civiltà che sarebbe stata spazzata via da un cataclisma circa 12.000 anni fa, lasciando solo frammenti: piramidi sommerse, templi allineati alle stelle, miti che parlano di "diluvi" e "dei venuti dal cielo".</p>
+
+                    <div class="pull-quote">
+                        "Non sto dicendo di avere ragione. Sto dicendo che le domande che pongo sono legittime."
+                    </div>
+
+                    <h2>Il Metodo Hancock</h2>
+                    <p>La critica mainstream lo accusa di "pseudo-archeologia". Ma Hancock risponde: chi ha stabilito il consenso? La storia della scienza è piena di rivoluzionari derisi: Wegener, Semmelweis, Tesla. Oggi senza di loro non esisterebbe la scienza moderna.</p>
+
+                    <h2>Göbekli Tepe</h2>
+                    <p>11.500 anni fa, cacciatori-raccoglitori costruirono un complesso templare che sfida ogni logica. Hancock lo cita come prova che una civiltà avanzata esisteva molto prima di quanto crediamo.</p>
+
+                    <h2>Come Tesla</h2>
+                    <p>Quando Tesla parlava di energia wireless, lo deridevano. Oggi senza Tesla non esisterebbe il mondo moderno. Hancock non ha le prove definitive, ma ha accumulato indizi: mappe antiche, miti convergenti, allineamenti astronomici. Non è una prova, ma un invito a porre domande.</p>
+
+                    <h2>Ancient Apocalypse</h2>
+                    <p>Nel 2022 Netflix ha prodotto una serie che ha scatenato un putiferio. L'archeologia organizzata ha chiesto di ritirarla, etichettandola come "disinformazione". Ma forse la vera disinformazione è nascondere che il nostro passato è molto più misterioso di quanto ci raccontano.</p>
+                </div>
+
+                <div class="donation-prompt">
+                    <p>Se questo articolo ti ha appassionato, sostieni la ricerca indipendente.</p>
+                    <button class="btn btn-primary" onclick="window.parent.openModal()">Sostienici</button>
+                </div>
+
+                <a href="index.html" class="btn-back">← Torna alla home</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer-grid">
+        <div class="footer-content">
             <div class="footer-col">
-                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">NEMESIS⚡</h3>
-                <p>Decodifica la realtà attraverso la storia. Unisciti alla rete cognitiva.</p>
+                <h4>NEMESIS</h4>
+                <p>Decodifichiamo la realtà attraverso la storia.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contatti</h4>
                 <div class="contact-info">
                     <div class="contact-item">
                         <span>📧</span>
@@ -357,55 +166,43 @@
                     </div>
                     <div class="contact-item">
                         <span>📱</span>
-                        <span class="telegram-coming">Telegram (in arrivo a breve)</span>
+                        <span class="telegram-coming">Telegram (in arrivo)</span>
                     </div>
                 </div>
             </div>
             <div class="footer-col">
-                <h4>TEMI</h4>
-                <ul>
-                    <li><a href="index.html#temi" onclick="alert('Sezione in costruzione.')">Archeologia</a></li>
-                    <li><a href="index.html#temi" onclick="alert('Sezione in costruzione.')">Storia</a></li>
-                    <li><a href="index.html#temi" onclick="alert('Sezione in costruzione.')">Politica</a></li>
-                    <li><a href="index.html#temi" onclick="alert('Sezione in costruzione.')">Scienza</a></li>
-                </ul>
+                <h4>Info</h4>
+                <p>© 2025 NEMESIS</p>
             </div>
-            <div class="footer-col">
-                <h4>METODI</h4>
-                <ul>
-                    <li><a href="#" onclick="alert('Presto disponibile.')">Le 3 Verità</a></li>
-                    <li><a href="#" onclick="alert('Presto disponibile.')">Cronosanguis</a></li>
-                    <li><a href="#" onclick="alert('Presto disponibile.')">Pattern</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>COMUNITÀ</h4>
-                <ul>
-                    <li><a href="#" onclick="alert('Presto disponibile.')">Cognitive ID</a></li>
-                    <li><a href="#" onclick="alert('Presto disponibile.')">Forum</a></li>
-                    <li><a href="#" onclick="alert('Presto disponibile.')">Mappa</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>CHI SIAMO</h4>
-                <ul>
-                    <li><a href="index.html#chi-siamo">Manifesto</a></li>
-                    <li><a href="index.html#chi-siamo">Contatti</a></li>
-                    <li><a href="#" onclick="alert('Privacy policy in fase di redazione.')">Privacy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>LEGALE</h4>
-                <ul>
-                    <li><a href="#" onclick="alert('Termini in fase di redazione.')">Termini</a></li>
-                    <li><a href="#" onclick="alert('Cookie policy in fase di redazione.')">Cookie</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 NEMESIS - Cogito Ergo Revolvo. Tutti i diritti riservati.</p>
-            <p>Immagini: NASA, ESA, Unsplash. Ispirazioni: Hancock, Tesla.</p>
         </div>
     </footer>
+
+    <!-- MODALE DONAZIONI (stessa funzione della home) -->
+    <div class="modal" id="donationModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3>Sostieni NEMESIS</h3>
+            <p>Puoi contribuire con una donazione volontaria via email. Presto anche corsi esclusivi.</p>
+            <div class="donation-email">
+                <a href="mailto:intotheunknown.nemesis@gmail.com?subject=Donazione">intotheunknown.nemesis@gmail.com</a>
+            </div>
+            <p>Iscriviti alla newsletter:</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie!');">
+                <input type="email" placeholder="La tua email" required>
+                <button type="submit">Iscriviti</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('donationModal').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('donationModal').classList.remove('active');
+        }
+        // Per il pulsante nell'articolo (window.parent se in iframe, ma qui non serve)
+        window.openModal = openModal;
+    </script>
 </body>
 </html>
