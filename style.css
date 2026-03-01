@@ -1,4 +1,4 @@
-/* ===== NEMESIS 3.0 - BOEING ARCHITECTURE ===== */
+/* ===== NEMESIS 4.0 - LIVELLO ESPONENZIALE ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
@@ -7,11 +7,13 @@
   --acciaio: #2A3B4C;
   --bianco: #FFFFFF;
   --bianco-sporco: #F2F5F9;
-  --grigio-neutro: #8A9AA9;
+  --grigio-chiaro: #F5F7FA;
+  --grigio-medio: #E2E8F0;
+  --grigio-scuro: #4A5568;
   --rosso-potenza: #E10600;
   --oro-antico: #C5A572;
-  --overlay-dark: rgba(10, 15, 43, 0.85);
-  --overlay-light: rgba(255, 255, 255, 0.02);
+  --overlay-scuro: rgba(10, 15, 43, 0.7);
+  --overlay-chiaro: rgba(245, 247, 250, 0.85);
   --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -21,9 +23,13 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--blu-profondo);
-  color: var(--bianco-sporco);
+  background-color: var(--grigio-chiaro);
+  color: var(--blu-profondo);
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.7;
@@ -59,9 +65,9 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(to bottom, rgba(10,15,43,0.95), rgba(10,15,43,0.8));
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: var(--blu-profondo);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .header-container {
@@ -77,12 +83,6 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.logo img {
-  height: 50px;
-  width: auto;
-  filter: brightness(0) invert(1);
 }
 
 .logo span {
@@ -101,7 +101,7 @@ header {
   50% { opacity: 0.7; }
 }
 
-/* ===== MEGA-NAV (BOEING STYLE) ===== */
+/* ===== MEGA-NAV ===== */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -118,6 +118,7 @@ header {
   letter-spacing: 1px;
   padding: 1rem 0;
   display: block;
+  color: var(--bianco);
   border-bottom: 2px solid transparent;
 }
 
@@ -131,10 +132,10 @@ header {
   left: 50%;
   transform: translateX(-50%);
   width: 800px;
-  background: var(--blu-profondo);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  background: var(--bianco);
+  border: 1px solid var(--grigio-medio);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
@@ -151,7 +152,7 @@ header {
 }
 
 .dropdown-col h4 {
-  color: var(--oro-antico);
+  color: var(--blu-oltremare);
   margin-bottom: 1.5rem;
   font-size: 1rem;
   text-transform: uppercase;
@@ -161,34 +162,34 @@ header {
 .dropdown-col a {
   display: block;
   margin-bottom: 0.8rem;
-  color: var(--grigio-neutro);
+  color: var(--grigio-scuro);
   font-size: 0.9rem;
 }
 
 .dropdown-col a:hover {
-  color: var(--bianco);
+  color: var(--blu-profondo);
   transform: translateX(5px);
 }
 
 .dropdown-col.highlight {
-  background: rgba(255,255,255,0.02);
+  background: var(--grigio-chiaro);
   padding: 1.5rem;
   border-radius: 8px;
 }
 
 .dropdown-col.highlight img {
   width: 100%;
-  border-radius: 4px;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
 
 .dropdown-col.highlight h5 {
-  color: var(--bianco);
+  color: var(--blu-profondo);
   margin-bottom: 0.5rem;
 }
 
 .dropdown-col.highlight p {
-  color: var(--grigio-neutro);
+  color: var(--grigio-scuro);
   font-size: 0.85rem;
   margin-bottom: 1rem;
 }
@@ -196,7 +197,7 @@ header {
 .dropdown-col.highlight .btn-mini {
   color: var(--rosso-potenza);
   font-weight: 600;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 5px;
 }
@@ -205,11 +206,11 @@ header {
   gap: 10px;
 }
 
-/* Search */
+/* ===== SEARCH ===== */
 .search-box {
   display: flex;
   align-items: center;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.1);
   border-radius: 30px;
   padding: 0.3rem;
 }
@@ -224,7 +225,7 @@ header {
 }
 
 .search-box input::placeholder {
-  color: var(--grigio-neutro);
+  color: rgba(255,255,255,0.6);
 }
 
 .search-box button {
@@ -242,7 +243,7 @@ header {
   background: #b30000;
 }
 
-/* ===== HERO SECTION CON VIDEO (BOEING) ===== */
+/* ===== HERO CON IMMAGINE DI FONDO ===== */
 .hero {
   position: relative;
   height: 80vh;
@@ -253,16 +254,10 @@ header {
   text-align: center;
   overflow: hidden;
   margin-top: 80px;
-}
-
-.hero video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
+  background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .hero::after {
@@ -272,21 +267,28 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(var(--overlay-dark), var(--overlay-dark)), radial-gradient(circle at center, transparent 0%, var(--blu-profondo) 100%);
-  z-index: -1;
+  background: var(--overlay-chiaro);
+  z-index: 1;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   padding: 2rem;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .hero-subtitle {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: var(--grigio-neutro);
+  color: var(--blu-profondo);
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .hero h1 {
@@ -295,7 +297,7 @@ header {
 }
 
 .hero h1 .line:first-child {
-  color: var(--bianco);
+  color: var(--blu-profondo);
   display: block;
 }
 
@@ -308,10 +310,10 @@ header {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 2rem auto;
-  color: var(--grigio-neutro);
+  color: var(--grigio-scuro);
 }
 
-/* ===== BUTTONS (BOEING) ===== */
+/* ===== BUTTONS ===== */
 .btn {
   display: inline-block;
   padding: 1rem 2.5rem;
@@ -324,7 +326,7 @@ header {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border-radius: 4px;
+  border-radius: 50px;
 }
 
 .btn-primary {
@@ -354,19 +356,31 @@ header {
 
 .btn-outline {
   background: transparent;
-  color: var(--bianco);
-  border: 2px solid var(--rosso-potenza);
+  color: var(--blu-profondo);
+  border: 2px solid var(--blu-profondo);
   margin-left: 1rem;
 }
 
 .btn-outline:hover {
-  background: var(--rosso-potenza);
+  background: var(--blu-profondo);
   color: var(--bianco);
 }
 
-/* ===== SEZIONE NEWS (BOEING) ===== */
+.btn-outline-light {
+  background: transparent;
+  color: var(--bianco);
+  border: 2px solid var(--bianco);
+}
+
+.btn-outline-light:hover {
+  background: var(--bianco);
+  color: var(--blu-profondo);
+}
+
+/* ===== SEZIONI ===== */
 .section {
   padding: 5rem 0;
+  background: var(--grigio-chiaro);
 }
 
 .section-header {
@@ -380,6 +394,7 @@ header {
   font-size: 2.5rem;
   max-width: 500px;
   position: relative;
+  color: var(--blu-profondo);
 }
 
 .section-title::after {
@@ -393,7 +408,7 @@ header {
 }
 
 .view-all {
-  color: var(--grigio-neutro);
+  color: var(--grigio-scuro);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -403,10 +418,10 @@ header {
 
 .view-all:hover {
   border-bottom-color: var(--rosso-potenza);
-  color: var(--bianco);
+  color: var(--blu-profondo);
 }
 
-/* ===== GRIGLIA NEWS (BOEING) ===== */
+/* ===== GRIGLIA NEWS ===== */
 .news-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -427,9 +442,10 @@ header {
 
 .news-card {
   position: relative;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .news-card.large {
@@ -445,7 +461,6 @@ header {
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s;
-  filter: brightness(1.1);
 }
 
 .news-card:hover img {
@@ -458,7 +473,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, var(--overlay-dark) 0%, transparent 50%);
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -477,6 +492,7 @@ header {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   line-height: 1.3;
+  color: var(--bianco);
 }
 
 .news-card.large .news-title {
@@ -484,7 +500,7 @@ header {
 }
 
 .news-excerpt {
-  color: var(--grigio-neutro);
+  color: rgba(255,255,255,0.8);
   margin-bottom: 1.5rem;
   transform: translateY(20px);
   opacity: 0;
@@ -509,7 +525,7 @@ header {
   gap: 10px;
 }
 
-/* ===== FEATURED PRODUCTS (BOEING) ===== */
+/* ===== PRODOTTI IN EVIDENZA ===== */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -519,8 +535,9 @@ header {
 .product-card {
   position: relative;
   height: 400px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .product-card img {
@@ -540,7 +557,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -557,9 +574,10 @@ header {
 .product-title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
+  color: var(--bianco);
 }
 
-/* ===== ROADBLOCK (BOEING) ===== */
+/* ===== ROADBLOCK ===== */
 .roadblock {
   position: relative;
   height: 400px;
@@ -585,13 +603,14 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, var(--overlay-dark) 0%, transparent 100%);
+  background: linear-gradient(to right, var(--blu-profondo) 0%, transparent 100%);
   z-index: -1;
 }
 
 .roadblock-content {
   max-width: 500px;
   padding: 2rem;
+  color: var(--bianco);
 }
 
 .roadblock-title {
@@ -601,12 +620,13 @@ header {
 
 .roadblock-description {
   margin-bottom: 2rem;
-  color: var(--grigio-neutro);
+  color: rgba(255,255,255,0.8);
 }
 
-/* ===== PURPOSE SECTION (BOEING) ===== */
+/* ===== PURPOSE SECTION ===== */
 .purpose-section {
-  background-color: var(--blu-oltremare);
+  background: var(--blu-profondo);
+  color: var(--bianco);
   padding: 5rem 0;
 }
 
@@ -620,7 +640,7 @@ header {
 .purpose-card {
   background: rgba(255,255,255,0.02);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -631,11 +651,16 @@ header {
 }
 
 .purpose-card p {
-  color: var(--grigio-neutro);
+  color: rgba(255,255,255,0.7);
   margin-bottom: 1.5rem;
 }
 
-/* ===== MINI-TILE (BOEING) ===== */
+.purpose-card a {
+  color: var(--rosso-potenza);
+  font-weight: 600;
+}
+
+/* ===== MINI-TILE GRID ===== */
 .mini-tile-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -647,15 +672,17 @@ header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(255,255,255,0.02);
+  background: var(--bianco);
   padding: 1rem;
   border-radius: 8px;
   transition: var(--transition);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  border: 1px solid var(--grigio-medio);
 }
 
 .mini-tile:hover {
-  background: rgba(255,255,255,0.05);
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .mini-tile img {
@@ -667,14 +694,193 @@ header {
 
 .mini-tile span {
   font-weight: 600;
-  color: var(--bianco);
+  color: var(--blu-profondo);
 }
 
-/* ===== FOOTER (BOEING) ===== */
+/* ===== GALLERIA ===== */
+.gallery-section {
+  background: var(--bianco);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.grid-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.grid-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.grid-item:hover .caption {
+  opacity: 1;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.lightbox-caption {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ===== TRENDING LIST ===== */
+.trending-list {
+  background: var(--bianco);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+  border: 1px solid var(--grigio-medio);
+}
+
+.trending-item {
+  display: block;
+  padding: 1rem;
+  border-bottom: 1px solid var(--grigio-medio);
+  font-weight: 600;
+  transition: var(--transition);
+  color: var(--grigio-scuro);
+}
+
+.trending-item:last-child {
+  border-bottom: none;
+}
+
+.trending-item:hover {
+  background: var(--blu-profondo);
+  color: var(--bianco);
+  padding-left: 1.5rem;
+  border-radius: 4px;
+}
+
+/* ===== NEWSLETTER ===== */
+.newsletter-box {
+  background: linear-gradient(135deg, var(--blu-profondo), var(--blu-oltremare));
+  color: var(--bianco);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.newsletter-box h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.newsletter-box p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter-form button {
+  padding: 1rem 2rem;
+  background: var(--rosso-potenza);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+  background: #b30000;
+  transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
 footer {
   background: var(--blu-profondo);
+  color: var(--bianco);
   padding: 4rem 30px 2rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer-grid {
@@ -686,7 +892,7 @@ footer {
 }
 
 .footer-col p {
-  color: var(--grigio-neutro);
+  color: rgba(255,255,255,0.7);
   margin: 1rem 0 2rem;
   font-size: 0.9rem;
 }
@@ -708,7 +914,7 @@ footer {
 }
 
 .footer-col a {
-  color: var(--grigio-neutro);
+  color: rgba(255,255,255,0.7);
   font-size: 0.9rem;
 }
 
@@ -716,42 +922,43 @@ footer {
   color: var(--rosso-potenza);
 }
 
-.social-links {
+.contact-info {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
-.social-links a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.05);
+.contact-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: var(--transition);
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.7);
 }
 
-.social-links a:hover {
-  background: var(--rosso-potenza);
-  transform: translateY(-3px);
+.contact-item a {
+  color: var(--bianco);
+  font-weight: 500;
 }
 
-.social-links svg {
-  width: 20px;
-  fill: var(--bianco);
+.contact-item a:hover {
+  color: var(--rosso-potenza);
+}
+
+.telegram-coming {
+  color: var(--grigio-medio);
+  font-style: italic;
 }
 
 .footer-bottom {
   max-width: 1400px;
   margin: 3rem auto 0;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--grigio-neutro);
+  color: rgba(255,255,255,0.6);
   font-size: 0.9rem;
 }
 
@@ -791,5 +998,11 @@ footer {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+  .mini-tile-grid {
+    grid-template-columns: 1fr;
+  }
+  .newsletter-form {
+    flex-direction: column;
   }
 }
