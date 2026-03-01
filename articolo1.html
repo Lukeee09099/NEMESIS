@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Stili specifici articolo */
-        .article-header {
+        .article-page {
             margin-top: 100px;
+            background: var(--grigio-chiaro);
+        }
+        .article-header {
             position: relative;
             height: 60vh;
             min-height: 400px;
             display: flex;
             align-items: flex-end;
             padding: 4rem;
-            background: linear-gradient(to top, var(--overlay-dark) 0%, transparent 50%),
+            background: linear-gradient(to top, var(--overlay-chiaro) 0%, transparent 50%),
                         url('https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
         }
         .article-header-content {
             max-width: 800px;
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 12px;
         }
         .article-category {
             font-size: 0.9rem;
@@ -27,16 +34,18 @@
             letter-spacing: 3px;
             color: var(--rosso-potenza);
             margin-bottom: 1rem;
+            font-weight: 600;
         }
         .article-title {
             font-size: 3.5rem;
             line-height: 1.1;
             margin-bottom: 1rem;
+            color: var(--blu-profondo);
         }
         .article-meta {
             display: flex;
             gap: 2rem;
-            color: var(--grigio-neutro);
+            color: var(--grigio-scuro);
             font-size: 0.9rem;
         }
         .article-container {
@@ -47,49 +56,54 @@
         .article-container p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            color: var(--bianco-sporco);
+            color: var(--grigio-scuro);
         }
         .article-container h2 {
             margin: 2rem 0 1rem;
+            color: var(--blu-profondo);
         }
         .pull-quote {
             margin: 3rem 0;
             padding: 2rem 3rem;
-            background: rgba(225,6,0,0.05);
+            background: var(--bianco);
             border-left: 4px solid var(--rosso-potenza);
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-style: italic;
-            color: var(--bianco);
+            color: var(--blu-profondo);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border-radius: 0 12px 12px 0;
         }
         .pull-quote cite {
             display: block;
             margin-top: 1rem;
             font-size: 1rem;
             font-style: normal;
-            color: var(--grigio-neutro);
+            color: var(--grigio-scuro);
         }
         .image-full {
             width: 100%;
             height: 500px;
             object-fit: cover;
             margin: 3rem 0;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         .highlight-box {
-            background: rgba(19,41,75,0.3);
-            border: 1px solid var(--blu-oltremare);
+            background: var(--bianco);
+            border: 1px solid var(--grigio-medio);
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 3rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
         }
         .timeline {
             display: flex;
             justify-content: space-between;
             margin: 3rem 0;
             padding: 2rem 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-top: 2px solid var(--grigio-medio);
+            border-bottom: 2px solid var(--grigio-medio);
         }
         .timeline-item {
             text-align: center;
@@ -102,18 +116,23 @@
         }
         .timeline-desc {
             font-size: 0.9rem;
-            color: var(--grigio-neutro);
+            color: var(--grigio-scuro);
         }
         .netflix-banner {
             background: #E50914;
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
             margin: 3rem 0;
         }
         .netflix-banner h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
+            color: var(--bianco);
+        }
+        .netflix-banner p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.5rem;
         }
         .netflix-banner .btn {
             background: var(--bianco);
@@ -122,7 +141,7 @@
         .related-articles {
             margin-top: 4rem;
             padding-top: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 2px solid var(--grigio-medio);
         }
         .related-grid {
             display: grid;
@@ -131,18 +150,26 @@
             margin-top: 2rem;
         }
         .related-card {
-            background: rgba(255,255,255,0.02);
+            background: var(--bianco);
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border: 1px solid var(--grigio-medio);
         }
         .related-card:hover {
-            background: rgba(255,255,255,0.05);
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
         }
         .related-card h4 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
+            color: var(--blu-profondo);
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--grigio-scuro);
+            margin-bottom: 1rem;
         }
         .related-card a {
             color: var(--rosso-potenza);
@@ -154,20 +181,19 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="https://via.placeholder.com/50x50/0033A0/FFFFFF?text=N" alt="NEMESIS">
                 <span>NEMESIS<span class="rosso">⚡</span></span>
             </a>
 
             <nav class="nav-links">
                 <div class="nav-item">
-                    <a href="#">Temi</a>
+                    <a href="index.html#temi">Temi</a>
                     <div class="mega-dropdown">
                         <div class="dropdown-col">
                             <h4>Archeologia</h4>
                             <a href="#">Civiltà perdute</a>
                             <a href="#">Göbekli Tepe</a>
                             <a href="#">Piramidi</a>
-                            <a href="#">Graham Hancock</a>
+                            <a href="articolo1.html">Graham Hancock</a>
                         </div>
                         <div class="dropdown-col">
                             <h4>Storia</h4>
@@ -185,16 +211,16 @@
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a href="#">Metodi</a>
+                    <a href="index.html#metodi">Metodi</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#">Ricerche</a>
+                    <a href="index.html#ricerche">Ricerche</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#">Community</a>
+                    <a href="index.html#community">Community</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#">Chi siamo</a>
+                    <a href="index.html#chi-siamo">Chi siamo</a>
                 </div>
                 <div class="nav-item">
                     <a href="articolo1.html">Hancock</a>
@@ -203,12 +229,12 @@
 
             <div class="search-box">
                 <input type="text" placeholder="Cerca pattern...">
-                <button>Cerca</button>
+                <button onclick="alert('Funzione di ricerca in sviluppo.')">Cerca</button>
             </div>
         </div>
     </header>
 
-    <main>
+    <main class="article-page">
         <header class="article-header">
             <div class="article-header-content">
                 <div class="article-category">Archeologia Proibita</div>
@@ -222,7 +248,7 @@
         </header>
 
         <div class="article-container">
-            <p class="lead" style="font-size: 1.4rem; font-weight: 300; color: var(--grigio-neutro); margin-bottom: 2rem;">
+            <p class="lead" style="font-size: 1.4rem; font-weight: 300; color: var(--grigio-scuro); margin-bottom: 2rem;">
                 "La storia che ci hanno insegnato è solo l'ombra di ciò che è realmente accaduto. E chi cerca di vedere oltre viene deriso, finché le sue scoperte non diventano impossibili da ignorare."
             </p>
 
@@ -288,7 +314,7 @@
 
             <div style="text-align: center; margin: 4rem 0;">
                 <h3 style="color: var(--rosso-potenza); margin-bottom: 1rem;">🎯 DOMANDA PROIBITA</h3>
-                <p style="font-size: 1.3rem; font-style: italic; max-width: 600px; margin: 0 auto;">Quante altre verità vengono nascoste perché non si adattano al modello?</p>
+                <p style="font-size: 1.3rem; font-style: italic; max-width: 600px; margin: 0 auto; color: var(--grigio-scuro);">Quante altre verità vengono nascoste perché non si adattano al modello?</p>
                 <button class="btn btn-primary" style="margin-top: 2rem;" onclick="alert('La verità ha bisogno di testimoni. Condividi questo articolo.')">CONDIVIDI LA RIVELAZIONE</button>
             </div>
 
@@ -298,19 +324,23 @@
                     <div class="related-card">
                         <h4>I Pattern della Storia</h4>
                         <p>Perché le civiltà sorgono e crollano in cicli regolari.</p>
-                        <a href="#">Leggi →</a>
+                        <a href="#" onclick="alert('Articolo in preparazione.')">Leggi →</a>
                     </div>
                     <div class="related-card">
                         <h4>Le 3 Verità</h4>
                         <p>Il metodo per decodificare qualsiasi narrazione.</p>
-                        <a href="#">Leggi →</a>
+                        <a href="#" onclick="alert('Articolo in preparazione.')">Leggi →</a>
                     </div>
                     <div class="related-card">
                         <h4>Göbekli Tepe</h4>
                         <p>Il tempio che riscrive la storia.</p>
-                        <a href="#">Leggi →</a>
+                        <a href="#" onclick="alert('Articolo in preparazione.')">Leggi →</a>
                     </div>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <a href="index.html" class="btn btn-primary">← TORNA ALLA HOME</a>
             </div>
         </div>
     </main>
@@ -318,52 +348,57 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h3 class="logo" style="font-size: 1.5rem; margin-bottom: 1rem;">NEMESIS⚡</h3>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">NEMESIS⚡</h3>
                 <p>Decodifica la realtà attraverso la storia. Unisciti alla rete cognitiva.</p>
-                <div class="social-links">
-                    <a href="#"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
-                    <a href="#"><svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.104c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.452-3.733c.469-.854.893-1.756 1.213-2.697a13.97 13.97 0 001.505-5.968 9.995 9.995 0 002.456-2.508z"/></svg></a>
-                    <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/></svg></a>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:intotheunknown.nemesis@gmail.com">intotheunknown.nemesis@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span class="telegram-coming">Telegram (in arrivo a breve)</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>TEMI</h4>
                 <ul>
-                    <li><a href="#">Archeologia</a></li>
-                    <li><a href="#">Storia</a></li>
-                    <li><a href="#">Politica</a></li>
-                    <li><a href="#">Scienza</a></li>
+                    <li><a href="index.html#temi" onclick="alert('Sezione in costruzione.')">Archeologia</a></li>
+                    <li><a href="index.html#temi" onclick="alert('Sezione in costruzione.')">Storia</a></li>
+                    <li><a href="index.html#temi" onclick="alert('Sezione in costruzione.')">Politica</a></li>
+                    <li><a href="index.html#temi" onclick="alert('Sezione in costruzione.')">Scienza</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>METODI</h4>
                 <ul>
-                    <li><a href="#">Le 3 Verità</a></li>
-                    <li><a href="#">Cronosanguis</a></li>
-                    <li><a href="#">Pattern</a></li>
+                    <li><a href="#" onclick="alert('Presto disponibile.')">Le 3 Verità</a></li>
+                    <li><a href="#" onclick="alert('Presto disponibile.')">Cronosanguis</a></li>
+                    <li><a href="#" onclick="alert('Presto disponibile.')">Pattern</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>COMUNITÀ</h4>
                 <ul>
-                    <li><a href="#">Cognitive ID</a></li>
-                    <li><a href="#">Forum</a></li>
-                    <li><a href="#">Mappa</a></li>
+                    <li><a href="#" onclick="alert('Presto disponibile.')">Cognitive ID</a></li>
+                    <li><a href="#" onclick="alert('Presto disponibile.')">Forum</a></li>
+                    <li><a href="#" onclick="alert('Presto disponibile.')">Mappa</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>CHI SIAMO</h4>
                 <ul>
-                    <li><a href="#">Manifesto</a></li>
-                    <li><a href="#">Contatti</a></li>
-                    <li><a href="#">Privacy</a></li>
+                    <li><a href="index.html#chi-siamo">Manifesto</a></li>
+                    <li><a href="index.html#chi-siamo">Contatti</a></li>
+                    <li><a href="#" onclick="alert('Privacy policy in fase di redazione.')">Privacy</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>LEGALE</h4>
                 <ul>
-                    <li><a href="#">Termini</a></li>
-                    <li><a href="#">Cookie</a></li>
+                    <li><a href="#" onclick="alert('Termini in fase di redazione.')">Termini</a></li>
+                    <li><a href="#" onclick="alert('Cookie policy in fase di redazione.')">Cookie</a></li>
                 </ul>
             </div>
         </div>
