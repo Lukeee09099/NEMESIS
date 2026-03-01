@@ -155,8 +155,7 @@
         </div>
     </div>
 
-  <script>
-    // ===== MODALE =====
+ <script>
     function openModal() {
         document.getElementById('donationModal').classList.add('active');
     }
@@ -164,44 +163,68 @@
         document.getElementById('donationModal').classList.remove('active');
     }
 
-    // ===== TICKER NOTIZIE IN TEMPO REALE (CON NEWSAPI) =====
     const API_KEY = 'b107dd291f7f4307a4482b370b0b8ab9';
 
     async function fetchNews() {
+        const ticker = document.getElementById('tickerContent');
+        // Notizie di fallback nel caso l'API non funzioni
+        const fallbackNews = [
+            { title: 'Conflitto in Medio Oriente: ultime notizie', url: '#', icon: '🔥' },
+            { title: 'Crisi economica: cosa aspettarsi', url: '#', icon: '📉' },
+            { title: 'Scoperta archeologica in Egitto', url: '#', icon: '🔍' },
+            { title: 'Nuove rivelazioni su Göbekli Tepe', url: '#', icon: '🔍' },
+            { title: 'Clima: allarme ONU', url: '#', icon: '🌱' }
+        ];
+
         try {
-            const response = await fetch(`https://newsapi.org/v2/top-headlines?language=it&pageSize=10&apiKey=${API_KEY}`);
+            // Cerchiamo notizie in inglese su argomenti generali (più probabilità di risultati)
+            const response = await fetch(`https://newsapi.org/v2/everything?q=world+news+politics&language=en&pageSize=10&apiKey=${API_KEY}`);
+            if (!response.ok) {
+                throw new Error(`API error: ${response.status}`);
+            }
             const data = await response.json();
             if (data.articles && data.articles.length > 0) {
                 let html = '';
-                // Duplichiamo le notizie per effetto continuo (3 cicli)
+                // Duplichiamo per effetto continuo
                 for (let i = 0; i < 3; i++) {
                     data.articles.forEach(article => {
                         let icon = '🌍';
                         const title = article.title;
-                        // Assegna icone in base a parole chiave
-                        if (title.includes('guerra') || title.includes('conflitto') || title.includes('Israele') || title.includes('Iran')) icon = '🔥';
-                        else if (title.includes('crisi') || title.includes('economia')) icon = '📉';
-                        else if (title.includes('clima') || title.includes('ambiente')) icon = '🌱';
-                        else if (title.includes('scoperta') || title.includes('archeologia')) icon = '🔍';
+                        if (title.toLowerCase().includes('war') || title.toLowerCase().includes('conflict') || title.toLowerCase().includes('israel') || title.toLowerCase().includes('iran')) icon = '🔥';
+                        else if (title.toLowerCase().includes('crisis') || title.toLowerCase().includes('economy') || title.toLowerCase().includes('stock')) icon = '📉';
+                        else if (title.toLowerCase().includes('climate') || title.toLowerCase().includes('environment') || title.toLowerCase().includes('global warming')) icon = '🌱';
+                        else if (title.toLowerCase().includes('discovery') || title.toLowerCase().includes('archaeology') || title.toLowerCase().includes('ancient')) icon = '🔍';
                         html += `<span>${icon} <a href="${article.url}" target="_blank">${article.title}</a></span>`;
                     });
                 }
-                document.getElementById('tickerContent').innerHTML = html;
+                ticker.innerHTML = html;
             } else {
-                document.getElementById('tickerContent').innerHTML = '<span>Nessuna notizia disponibile al momento.</span>';
+                // Nessun articolo, usiamo fallback
+                useFallback();
             }
         } catch (error) {
-            console.error('Errore nel caricamento delle notizie:', error);
-            document.getElementById('tickerContent').innerHTML = '<span>Errore nel caricamento delle notizie. Riprova più tardi.</span>';
+            console.error('Errore API, uso fallback:', error);
+            useFallback();
+        }
+
+        function useFallback() {
+            let html = '';
+            for (let i = 0; i < 3; i++) {
+                fallbackNews.forEach(item => {
+                    html += `<span>${item.icon} <a href="${item.url}" onclick="alert('Notizia di esempio. Attiva l\'API per notizie reali.')">${item.title}</a></span>`;
+                });
+            }
+            ticker.innerHTML = html;
         }
     }
 
-    // Carica le notizie all'avvio
+    // Carica notizie all'avvio
     fetchNews();
     // Aggiorna ogni 10 minuti
     setInterval(fetchNews, 600000);
 </script>
 </body>
 </html>
+
 
 
