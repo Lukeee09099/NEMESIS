@@ -1,187 +1,403 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graham Hancock - NEMESIS</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
-        :root {
-            --giallo-sole: #FFD166;
-            --arancio-vivace: #F07C3E;
-            --verde-prato: #06D6A0;
-            --blu-cielo: #118AB2;
-            --blu-profondo: #073B4C;
-            --bianco-panna: #FDF9F3;
-            --grigio-chiaro: #F0F3F5;
-            --grigio-medio: #D9E2E6;
-            --grigio-scuro: #4A5568;
-            --testo-scuro: #1E2F4D;
-            --transition: all 0.3s ease;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Graham Hancock — Il ribelle dell'archeologia | NEMESIS</title>
 
-        body {
-            background-color: var(--bianco-panna);
-            color: var(--testo-scuro);
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-        }
+<meta name="description" content="Graham Hancock sfida l'archeologia tradizionale con l'ipotesi di una civiltà avanzata perduta 12.000 anni fa.">
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+<meta property="og:title" content="Graham Hancock — Il ribelle dell'archeologia">
+<meta property="og:description" content="Un'indagine sulle teorie di Hancock e sulle anomalie del nostro passato.">
+<meta property="og:type" content="article">
 
-        header {
-            background: linear-gradient(135deg, var(--blu-profondo), var(--blu-cielo));
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--giallo-sole);
-            text-decoration: none;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-        .logo span {
-            color: var(--arancio-vivace);
-        }
+<style>
 
-        .article-header {
-            margin-bottom: 2rem;
-        }
+/* ====== BASE ====== */
 
-        .article-category {
-            color: var(--arancio-vivace);
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
+:root{
 
-        .article-title {
-            font-size: 2.8rem;
-            color: var(--blu-profondo);
-            margin-bottom: 1rem;
-        }
+--yellow:#FFD166;
+--orange:#F07C3E;
+--green:#06D6A0;
+--blue:#118AB2;
+--deep:#073B4C;
 
-        .article-meta {
-            color: var(--grigio-scuro);
-            margin-bottom: 2rem;
-        }
+--cream:#FDF9F3;
+--light:#F0F3F5;
+--mid:#D9E2E6;
+--dark:#4A5568;
 
-        .article-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-        }
+--text:#1E2F4D;
 
-        .article-content h2 {
-            margin: 2rem 0 1rem;
-            color: var(--blu-profondo);
-        }
+}
 
-        .article-content p {
-            margin-bottom: 1.5rem;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-        .pull-quote {
-            margin: 2rem 0;
-            padding: 1.5rem 2rem;
-            background: var(--grigio-chiaro);
-            border-left: 4px solid var(--arancio-vivace);
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--blu-profondo);
-        }
+body{
 
-        .btn-back {
-            display: inline-block;
-            margin: 2rem 0;
-            padding: 0.8rem 2rem;
-            background: var(--blu-cielo);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-        }
+font-family:'Inter',sans-serif;
 
-        .btn-back:hover {
-            background: var(--blu-profondo);
-        }
+background:var(--cream);
+color:var(--text);
 
-        footer {
-            background: var(--blu-profondo);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
+line-height:1.7;
 
-        .deepseek-credit a {
-            color: var(--giallo-sole);
-        }
-    </style>
+}
+
+/* ===== HEADER ===== */
+
+header{
+
+background:linear-gradient(135deg,var(--deep),var(--blue));
+
+padding:1rem 20px;
+
+text-align:center;
+
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+.logo{
+
+font-size:2rem;
+font-weight:800;
+
+color:var(--yellow);
+
+text-decoration:none;
+
+}
+
+.logo span{
+color:var(--orange);
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+
+max-width:900px;
+margin:auto;
+
+padding:3rem 20px;
+
+}
+
+/* ===== ARTICLE ===== */
+
+.article-category{
+
+color:var(--orange);
+
+font-weight:700;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+margin-bottom:0.5rem;
+
+}
+
+.article-title{
+
+font-size:clamp(2.2rem,5vw,3rem);
+
+color:var(--deep);
+
+margin-bottom:1rem;
+
+}
+
+.article-meta{
+
+color:var(--dark);
+
+margin-bottom:2rem;
+
+font-size:0.95rem;
+
+}
+
+/* ===== IMAGE ===== */
+
+.article-image{
+
+width:100%;
+height:420px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+margin-bottom:2rem;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ===== CONTENT ===== */
+
+.article-content{
+
+font-size:1.15rem;
+
+}
+
+.article-content p{
+
+margin-bottom:1.6rem;
+
+}
+
+.article-content h2{
+
+margin:3rem 0 1rem;
+
+color:var(--deep);
+
+font-size:1.7rem;
+
+}
+
+/* ===== LEAD ===== */
+
+.lead{
+
+font-size:1.35rem;
+
+font-weight:300;
+
+color:var(--dark);
+
+margin-bottom:2rem;
+
+}
+
+/* ===== QUOTE ===== */
+
+.pull-quote{
+
+margin:3rem 0;
+
+padding:2rem;
+
+background:var(--light);
+
+border-left:5px solid var(--orange);
+
+font-size:1.25rem;
+
+font-style:italic;
+
+color:var(--deep);
+
+border-radius:10px;
+
+}
+
+/* ===== BUTTON ===== */
+
+.btn-back{
+
+display:inline-block;
+
+margin-top:3rem;
+
+padding:0.8rem 2rem;
+
+background:var(--blue);
+
+color:white;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.btn-back:hover{
+
+background:var(--deep);
+
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+
+margin-top:4rem;
+
+background:var(--deep);
+
+color:white;
+
+text-align:center;
+
+padding:2rem;
+
+}
+
+footer a{
+color:var(--yellow);
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:700px){
+
+.article-image{
+
+height:260px;
+
+}
+
+.article-content{
+
+font-size:1.05rem;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <header>
-        <a href="index.html" class="logo">NEMESIS<span>⚡</span></a>
-    </header>
 
-    <main class="container">
-        <article>
-            <div class="article-header">
-                <div class="article-category">Archeologia Proibita</div>
-                <h1 class="article-title">Graham Hancock: Il ribelle che sfida l'archeologia</h1>
-                <div class="article-meta">Pubblicato il 1 Marzo 2025 | Tempo di lettura: 10 minuti</div>
-            </div>
+<header>
 
-            <img class="article-image" src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Graham Hancock">
+<a class="logo" href="index.html">NEMESIS<span>⚡</span></a>
 
-            <div class="article-content">
-                <p class="lead" style="font-size:1.3rem; font-weight:300; color:var(--grigio-scuro);">"La storia che ci hanno insegnato è solo l'ombra di ciò che è realmente accaduto."</p>
+</header>
 
-                <p>Graham Hancock non ha mai avuto una cattedra universitaria. Non ha pubblicato su riviste peer-reviewed. E forse è proprio per questo che vede ciò che gli accademici, prigionieri dei loro paradigmi, non possono vedere. Da trent'anni viaggia attraverso i continenti, accumulando prove di una civiltà perduta, globale, avanzata, risalente all'ultima era glaciale. Una civiltà che sarebbe stata spazzata via da un cataclisma circa 12.000 anni fa, lasciando solo frammenti: piramidi sommerse, templi allineati alle stelle, miti che parlano di "diluvi" e "dei venuti dal cielo".</p>
 
-                <div class="pull-quote">
-                    "Non sto dicendo di avere ragione. Sto dicendo che le domande che pongo sono legittime."
-                </div>
+<main class="container">
 
-                <h2>Il Metodo Hancock</h2>
-                <p>La critica mainstream lo accusa di "pseudo-archeologia". Ma Hancock risponde: chi ha stabilito il consenso? La storia della scienza è piena di rivoluzionari derisi: Wegener, Semmelweis, Tesla. Oggi senza di loro non esisterebbe la scienza moderna.</p>
+<article>
 
-                <h2>Göbekli Tepe</h2>
-                <p>11.500 anni fa, cacciatori-raccoglitori costruirono un complesso templare che sfida ogni logica. Hancock lo cita come prova che una civiltà avanzata esisteva molto prima di quanto crediamo.</p>
+<div class="article-category">
 
-                <h2>Come Tesla</h2>
-                <p>Quando Tesla parlava di energia wireless, lo deridevano. Oggi senza Tesla non esisterebbe il mondo moderno. Hancock non ha le prove definitive, ma ha accumulato indizi: mappe antiche, miti convergenti, allineamenti astronomici. Non è una prova, ma un invito a porre domande.</p>
+Archeologia Proibita
 
-                <h2>Ancient Apocalypse</h2>
-                <p>Nel 2022 Netflix ha prodotto una serie che ha scatenato un putiferio. L'archeologia organizzata ha chiesto di ritirarla, etichettandola come "disinformazione". Ma forse la vera disinformazione è nascondere che il nostro passato è molto più misterioso di quanto ci raccontano.</p>
-            </div>
+</div>
 
-            <a href="index.html" class="btn-back">← Torna alla home</a>
-        </article>
-    </main>
+<h1 class="article-title">
 
-    <footer>
-        <p>© 2025 NEMESIS - Cogito Ergo Revolvo</p>
-        <div class="deepseek-credit">
-            Powered by <a href="https://deepseek.com" target="_blank">DeepSeek AI</a> ⚡
-        </div>
-    </footer>
+Graham Hancock: Il ribelle che sfida l'archeologia
+
+</h1>
+
+<div class="article-meta">
+
+Pubblicato il 1 Marzo 2025 • Tempo di lettura: 10 minuti
+
+</div>
+
+<img class="article-image"
+
+src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?auto=format&fit=crop&w=1200&q=80"
+
+alt="Graham Hancock">
+
+<div class="article-content">
+
+<p class="lead">
+
+"La storia che ci hanno insegnato è solo l'ombra di ciò che è realmente accaduto."
+
+</p>
+
+<p>
+
+Graham Hancock non ha mai avuto una cattedra universitaria. Non ha pubblicato su riviste peer-reviewed. E forse è proprio per questo che vede ciò che gli accademici, prigionieri dei loro paradigmi, non riescono più a vedere.
+
+</p>
+
+<p>
+
+Da trent'anni viaggia attraverso i continenti, accumulando prove di una possibile civiltà perduta globale, avanzata, risalente all'ultima era glaciale. Una civiltà che sarebbe stata spazzata via da un cataclisma circa 12.000 anni fa.
+
+</p>
+
+<div class="pull-quote">
+
+"Non sto dicendo di avere ragione. Sto dicendo che le domande che pongo sono legittime."
+
+</div>
+
+<h2>Il Metodo Hancock</h2>
+
+<p>
+
+La critica mainstream lo accusa di pseudo-archeologia. Ma Hancock ribatte che il consenso scientifico cambia continuamente. La storia della scienza è piena di rivoluzionari derisi prima di essere accettati.
+
+</p>
+
+<h2>Göbekli Tepe</h2>
+
+<p>
+
+11.500 anni fa, cacciatori-raccoglitori costruirono un complesso templare monumentale che sfida ogni logica evolutiva tradizionale.
+
+</p>
+
+<h2>Come Tesla</h2>
+
+<p>
+
+Quando Nikola Tesla parlava di energia wireless veniva deriso. Oggi il mondo moderno esiste anche grazie alle sue intuizioni.
+
+</p>
+
+<h2>Ancient Apocalypse</h2>
+
+<p>
+
+Nel 2022 Netflix ha prodotto la serie “Ancient Apocalypse”. Il dibattito che ne è seguito dimostra una cosa: il nostro passato potrebbe essere molto più misterioso di quanto immaginiamo.
+
+</p>
+
+</div>
+
+<a href="index.html" class="btn-back">
+
+← Torna alla home
+
+</a>
+
+</article>
+
+</main>
+
+<footer>
+
+<p>© 2025 NEMESIS — Cogito Ergo Revolvo</p>
+
+<p>Powered by DeepSeek AI ⚡</p>
+
+</footer>
+
 </body>
+
 </html>
+
